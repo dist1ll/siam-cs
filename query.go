@@ -35,7 +35,7 @@ import (
 	"time"
 )
 
-// Fetches the latest version of the HLTV page.
+// Fetch gets the latest version of the HLTV page.
 // Note: Do not abuse this function. Exceeding certain rates can be interpreted as
 // crawling and result in IP ban.
 func (h *HLTV) Fetch() (err error) {
@@ -47,7 +47,7 @@ func (h *HLTV) Fetch() (err error) {
 	return err
 }
 
-// Performs a GET-Query to the given URL, and creates a goquery-Document from its response.
+// GetDocument performs a GET-Query to the given URL, and creates a goquery-Document from its response.
 func GetDocument(url string) (*goquery.Document, error) {
 	client := &http.Client{}
 	req, err := http.NewRequest("GET", url, nil)

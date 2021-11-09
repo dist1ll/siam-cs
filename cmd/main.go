@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/m2q/siam-cs/csgo"
+	"github.com/m2q/siam-cs"
 )
 
 func main() {
@@ -13,7 +13,8 @@ func main() {
 	if err != nil {
 		fmt.Errorf(err.Error())
 	}
-	_, _ = hltv.GetFutureMatches()
+	matches, _ := hltv.GetFutureMatches()
 	_, _ = hltv.GetPastMatches()
 
+	fmt.Println(matches)
 }

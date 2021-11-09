@@ -36,6 +36,13 @@ type Result struct {
 	Score string
 }
 
+// API is a provider of CSGO match data. It provides methods for fetching
+// past and future matches.
+type API interface {
+	GetPastMatches() ([]Match, error)
+	GetFutureMatches() ([]Match, error)
+}
+
 type HLTV struct {
 	UpcomingPage *goquery.Document
 	ResultsPage  *goquery.Document
