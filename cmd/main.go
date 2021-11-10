@@ -1,11 +1,12 @@
 package main
 
 import (
+	"log"
+	"time"
+
 	siam "github.com/m2q/algo-siam"
 	"github.com/m2q/algo-siam/client"
 	"github.com/m2q/siam-cs"
-	"log"
-	"time"
 )
 
 func main() {
@@ -23,8 +24,8 @@ func main() {
 	}
 
 	// Start Oracle
-	err = csgo.NewOracle(b, cfg).Serve()
-	if err != nil {
-		log.Fatal(err)
-	}
+	wg, _ := csgo.NewOracle(b, cfg).Serve()
+
+	// Wait until oracle finishes
+	wg.Wait()
 }

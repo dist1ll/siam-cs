@@ -1,7 +1,9 @@
 package csgo
 
 import (
+	"context"
 	siam "github.com/m2q/algo-siam"
+	"sync"
 	"time"
 )
 
@@ -42,6 +44,21 @@ func NewOracle(b *siam.AlgorandBuffer, cfg *OracleConfig) *Oracle {
 	return &Oracle{cfg: cfg, buffer: b}
 }
 
-func (o *Oracle) Serve() error {
-	return nil
+// Serve spawns a cancelable goroutine that manages continuously fetches data, and publishes
+// it on the blockchain. The goroutine can be cancelled anytime via the returned context.CancelFunc.
+// The returned WaitGroup will be done if the Oracle finishes execution (can be used to make sure
+// no goroutine is being leaked).
+func (o *Oracle) Serve() (*sync.WaitGroup, context.CancelFunc) {
+	var wg sync.WaitGroup
+	ctx, cancel := context.WithCancel(context.Background())
+	wg.Add(1)
+	go func() {
+		defer wg.Done()
+		o.serve(ctx)
+	}()
+	return &wg, cancel
+}
+
+// serve contains the actual implementation of the Oracle behavior.
+func (o *Oracle) serve(ctx context.Context) {
 }
