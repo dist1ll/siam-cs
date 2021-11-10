@@ -5,6 +5,7 @@ import (
 	"github.com/m2q/algo-siam/client"
 	"github.com/m2q/siam-cs"
 	"log"
+	"time"
 )
 
 func main() {
@@ -15,8 +16,14 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// Configure Oracle
+	cfg := &csgo.OracleConfig{
+		PrimaryAPI:      &csgo.HLTV{},
+		RefreshInterval: time.Minute,
+	}
+
 	// Start Oracle
-	err = csgo.NewOracle(b, &csgo.HLTV{}).Serve()
+	err = csgo.NewOracle(b, cfg).Serve()
 	if err != nil {
 		log.Fatal(err)
 	}
