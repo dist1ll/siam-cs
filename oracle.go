@@ -61,4 +61,6 @@ func (o *Oracle) Serve() (*sync.WaitGroup, context.CancelFunc) {
 
 // serve contains the actual implementation of the Oracle behavior.
 func (o *Oracle) serve(ctx context.Context) {
+	for ctx.Err() == nil {
+	}
 }

@@ -1,7 +1,6 @@
 package csgo
 
 import (
-	"github.com/PuerkitoBio/goquery"
 	"time"
 )
 
@@ -36,14 +35,33 @@ type Result struct {
 	Score string
 }
 
-// API is a provider of CSGO match data. It provides methods for fetching
-// past and future matches.
+// API is a provider of CSGO match data. It provides methods for fetching past and
+// future matches. Which matches are selected is up to the API implementation.
 type API interface {
+	// GetPastMatches returns a list of past CSGO pro matches.
+	// The reference implementation is provided by HLTV.
 	GetPastMatches() ([]Match, error)
+	// GetFutureMatches returns a list of upcoming CSGO pro matches.
+	// The reference implementation is provided by HLTV.
 	GetFutureMatches() ([]Match, error)
 }
 
-type HLTV struct {
-	UpcomingPage *goquery.Document
-	ResultsPage  *goquery.Document
+// StubAPI is a stub that implements API. You can explicitly set the match data
+// that shall be returned by the API functions, by modifying the public fields or
+// calling SetMatches. You can also specify if the stub should return an error.
+type StubAPI struct {
+}
+
+// SetMatches sets future and past matches according to the given []Match slice.
+// All matches with index < i will be considered past matches, and every other match
+// will be considered a future match.
+func (s *StubAPI) SetMatches(m []Match, i int) {
+
+}
+func (s *StubAPI) GetPastMatches() ([]Match, error) {
+	return nil, nil
+}
+
+func (s *StubAPI) GetFutureMatches() ([]Match, error) {
+	return nil, nil
 }

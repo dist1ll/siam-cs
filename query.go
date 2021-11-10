@@ -1,5 +1,6 @@
 /*
 The following file has been adapted from https://github.com/Olament/HLTV-Go
+and modified to serve this projects purpose.
 
 MIT License
 
@@ -34,6 +35,11 @@ import (
 	"strings"
 	"time"
 )
+
+type HLTV struct {
+	UpcomingPage *goquery.Document
+	ResultsPage  *goquery.Document
+}
 
 // Fetch gets the latest version of the HLTV page.
 // Note: Do not abuse this function. Exceeding certain rates can be interpreted as
