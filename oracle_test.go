@@ -27,7 +27,7 @@ func getTestingData(path string) []Match {
 // Tests if the Oracle writes the data provided by the API stub to the AlgorandBuffer
 func TestOracle_SimpleSmallData(t *testing.T) {
 	oracle, _, stub := setupOracleMockedAPI()
-	wg, cancel := oracle.Serve()
+	oracle.Serve()
 
 	// Set match data to stub
 	matchData := getTestingData("data_1")
@@ -37,7 +37,6 @@ func TestOracle_SimpleSmallData(t *testing.T) {
 	// contains, _ := buffer.ContainsWithin(MatchesToMap(matchData), time.Second)
 	// assert.True(t, contains)
 
-	// Cancel goroutine
-	cancel()
-	wg.Wait()
+	// Stop oracle
+	oracle.Stop()
 }

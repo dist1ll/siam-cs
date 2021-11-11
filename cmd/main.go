@@ -23,9 +23,12 @@ func main() {
 		RefreshInterval: time.Minute,
 	}
 
+	// Create Oracle
+	oracle := csgo.NewOracle(b, cfg)
+
 	// Start Oracle
-	wg, _ := csgo.NewOracle(b, cfg).Serve()
+	oracle.Serve()
 
 	// Wait until oracle finishes
-	wg.Wait()
+	oracle.Wait()
 }
