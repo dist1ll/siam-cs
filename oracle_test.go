@@ -3,6 +3,7 @@ package csgo
 import (
 	siam "github.com/m2q/algo-siam"
 	"github.com/m2q/algo-siam/client"
+	"github.com/m2q/siam-cs/generator"
 	"github.com/stretchr/testify/assert"
 	"testing"
 	"time"
@@ -31,13 +32,13 @@ func TestOracle_SimpleSmallData(t *testing.T) {
 	oracle.Serve()
 
 	// Set match data to stub
-	matchData := getTestingData("data_1")
+	matchData := generator.GetData()
 	stub.SetMatches(matchData, 5)
 
 	// Check if data is being written to the AlgorandBuffer
 	contains := buffer.ContainsWithin(CreateWinnerMap(matchData), time.Second)
 	assert.True(t, contains)
-	
+
 	// Stop oracle
 	oracle.Stop()
 }

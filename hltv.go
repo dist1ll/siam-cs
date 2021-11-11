@@ -30,6 +30,7 @@ package csgo
 import (
 	"errors"
 	"github.com/PuerkitoBio/goquery"
+	"github.com/m2q/siam-cs/model"
 	"net/http"
 	"strconv"
 	"strings"
@@ -88,10 +89,10 @@ func PopSlashSource(selection *goquery.Selection) string {
 	return split[len(split)-1]
 }
 
-func (h *HLTV) GetPastMatches() ([]Match, error) {
+func (h *HLTV) GetPastMatches() ([]model.Match, error) {
 	doc := h.ResultsPage
 
-	matches := make([]Match, 0, 100)
+	matches := make([]model.Match, 0, 100)
 
 	doc.Find(".result").Each(func(i int, selection *goquery.Selection) {
 		tmp, _ := selection.Parent().Attr("href")
@@ -106,18 +107,18 @@ func (h *HLTV) GetPastMatches() ([]Match, error) {
 		scoreWon := selection.Find(".score-won").First().Text()
 		scoreLost := selection.Find(".score-lost").First().Text()
 
-		match := Match{
+		match := model.Match{
 			ID: matchID,
-			Team1: Team{
+			Team1: model.Team{
 				Name: team1,
 			},
-			Team2: Team{
+			Team2: model.Team{
 				Name: team2,
 			},
-			Event: Event{
+			Event: model.Event{
 				Name: event,
 			},
-			Result: Result{
+			Result: model.Result{
 				Winner: winner,
 				Score:  scoreWon + "-" + scoreLost,
 			},
@@ -129,7 +130,7 @@ func (h *HLTV) GetPastMatches() ([]Match, error) {
 	return matches, nil
 }
 
-func (h *HLTV) GetFutureMatches() ([]Match, error) {
+func (h *HLTV) GetFutureMatches() ([]model.Match, error) {
 	doc := h.UpcomingPage
 	// Get top tier matches
 	matches := getMatchesFromMatchesPage(doc, ".liveMatch")
@@ -143,8 +144,8 @@ func (h *HLTV) GetFutureMatches() ([]Match, error) {
 
 // getMatchesFromMatchesPage returns a []Match slice containing matches parsed from the upcoming matches
 // page. There are two categories as of now, live and upcoming, specified in the matchType string
-func getMatchesFromMatchesPage(doc *goquery.Document, matchType string) []Match {
-	matches := make([]Match, 0)
+func getMatchesFromMatchesPage(doc *goquery.Document, matchType string) []model.Match {
+	matches := make([]model.Match, 0)
 	doc.Find(matchType).Each(func(i int, selection *goquery.Selection) {
 		matchHref, _ := selection.Find("a.match").First().Attr("href")
 		matchID, _ := strconv.Atoi(strings.Split(matchHref, "/")[2])
@@ -170,24 +171,24 @@ func getMatchesFromMatchesPage(doc *goquery.Document, matchType string) []Match 
 		team2IDStr, _ := selection.Attr("team2")
 		team2ID, _ := strconv.Atoi(team2IDStr)
 
-		match := Match{
+		match := model.Match{
 			ID: matchID,
-			Team1: Team{
+			Team1: model.Team{
 				Name: team1,
 				ID:   team1ID,
 			},
-			Team2: Team{
+			Team2: model.Team{
 				Name: team2,
 				ID:   team2ID,
 			},
 			Date:   date,
 			Format: format,
-			Event: Event{
+			Event: model.Event{
 				Name:    event,
 				ID:      eventID,
 				LogoURL: eventLogo,
 			},
-			Result: Result{},
+			Result: model.Result{},
 		}
 
 		matches = append(matches, match)

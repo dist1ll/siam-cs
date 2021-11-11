@@ -3,14 +3,15 @@ package csgo
 import (
 	"context"
 	siam "github.com/m2q/algo-siam"
+	"github.com/m2q/siam-cs/model"
 	"sync"
 	"time"
 )
 
 // Oracle aggregates and stores all HLTV data
 type Oracle struct {
-	pastMatches   []Match
-	futureMatches []Match
+	pastMatches   []model.Match
+	futureMatches []model.Match
 	cfg           *OracleConfig
 	buffer        *siam.AlgorandBuffer
 	cancelOracle  context.CancelFunc
