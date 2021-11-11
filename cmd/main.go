@@ -12,7 +12,8 @@ import (
 func main() {
 
 	// Create AlgorandBuffer
-	b, err := siam.CreateAlgorandBuffer(client.CreateAlgorandClientMock("", ""), "")
+	b, err := siam.CreateAlgorandBuffer(client.CreateAlgorandClientMock("", ""),
+		client.GeneratePrivateKey64())
 	if err != nil {
 		log.Fatal(err)
 	}

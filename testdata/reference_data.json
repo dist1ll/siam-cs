@@ -1,0 +1,3084 @@
+[
+	{
+		"ID": 2352360,
+		"Team1": {
+			"Name": "G2",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "NIP",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "Battle of Betway 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "G2",
+			"Score": "13-1"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352365,
+		"Team1": {
+			"Name": "BIG",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "FURIA",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "Battle of Betway 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "",
+			"Score": "-"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352533,
+		"Team1": {
+			"Name": "SKADE",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "MAD Lions",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "DreamHack Open November 2021 Closed Qualifier",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "MAD Lions",
+			"Score": "2-0"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352534,
+		"Team1": {
+			"Name": "Sinners",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Entropiq",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "DreamHack Open November 2021 Closed Qualifier",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Sinners",
+			"Score": "2-0"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352527,
+		"Team1": {
+			"Name": "Fiend",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Wisla Krakow",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "V4 Future Sports Festival 2021 International Cup",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Wisla Krakow",
+			"Score": "2-1"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352361,
+		"Team1": {
+			"Name": "FURIA",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "NIP",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "Battle of Betway 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "FURIA",
+			"Score": "13-2"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352366,
+		"Team1": {
+			"Name": "MIBR",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "G2",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "Battle of Betway 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "G2",
+			"Score": "13-11"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352367,
+		"Team1": {
+			"Name": "MIBR",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "FURIA",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "Battle of Betway 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "MIBR",
+			"Score": "13-0"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352368,
+		"Team1": {
+			"Name": "G2",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "MIBR",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "Battle of Betway 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "G2",
+			"Score": "16-13"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352538,
+		"Team1": {
+			"Name": "SKADE",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "forZe",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "DreamHack Open November 2021 Closed Qualifier",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "forZe",
+			"Score": "2-0"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352333,
+		"Team1": {
+			"Name": "Entropiq",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Dignitas",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "REPUBLEAGUE TIPOS Season 2",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Entropiq",
+			"Score": "2-0"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352334,
+		"Team1": {
+			"Name": "Fiend",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Eternal Fire",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "REPUBLEAGUE TIPOS Season 2",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Fiend",
+			"Score": "2-1"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352442,
+		"Team1": {
+			"Name": "Astralis",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Copenhagen Flames",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021 Challengers Stage",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Copenhagen Flames",
+			"Score": "16-6"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352446,
+		"Team1": {
+			"Name": "Spirit",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "FaZe",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021 Challengers Stage",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "FaZe",
+			"Score": "16-11"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352443,
+		"Team1": {
+			"Name": "ENCE",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "GODSENT",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021 Challengers Stage",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "ENCE",
+			"Score": "16-10"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352447,
+		"Team1": {
+			"Name": "paiN",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Virtus.pro",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021 Challengers Stage",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Virtus.pro",
+			"Score": "16-14"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352444,
+		"Team1": {
+			"Name": "BIG",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Entropiq",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021 Challengers Stage",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "BIG",
+			"Score": "16-13"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352448,
+		"Team1": {
+			"Name": "Movistar Riders",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Renegades",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021 Challengers Stage",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Movistar Riders",
+			"Score": "16-13"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352449,
+		"Team1": {
+			"Name": "MOUZ",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Sharks",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021 Challengers Stage",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "MOUZ",
+			"Score": "16-6"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352445,
+		"Team1": {
+			"Name": "Heroic",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "TYLOO",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021 Challengers Stage",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Heroic",
+			"Score": "16-12"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352451,
+		"Team1": {
+			"Name": "Astralis",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Entropiq",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021 Challengers Stage",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Entropiq",
+			"Score": "16-6"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352450,
+		"Team1": {
+			"Name": "Spirit",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "GODSENT",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021 Challengers Stage",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Spirit",
+			"Score": "16-12"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352455,
+		"Team1": {
+			"Name": "BIG",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Copenhagen Flames",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021 Challengers Stage",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Copenhagen Flames",
+			"Score": "16-11"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352454,
+		"Team1": {
+			"Name": "ENCE",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "FaZe",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021 Challengers Stage",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "FaZe",
+			"Score": "16-12"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352457,
+		"Team1": {
+			"Name": "Heroic",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "MOUZ",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021 Challengers Stage",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Heroic",
+			"Score": "16-11"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352456,
+		"Team1": {
+			"Name": "Movistar Riders",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Virtus.pro",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021 Challengers Stage",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Virtus.pro",
+			"Score": "16-12"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352458,
+		"Team1": {
+			"Name": "Spirit",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "TYLOO",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021 Challengers Stage",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Spirit",
+			"Score": "16-3"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352459,
+		"Team1": {
+			"Name": "BIG",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Renegades",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021 Challengers Stage",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "BIG",
+			"Score": "16-9"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352460,
+		"Team1": {
+			"Name": "ENCE",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "MOUZ",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021 Challengers Stage",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "ENCE",
+			"Score": "16-11"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352461,
+		"Team1": {
+			"Name": "Movistar Riders",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Entropiq",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021 Challengers Stage",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Entropiq",
+			"Score": "16-12"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352462,
+		"Team1": {
+			"Name": "FaZe",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Virtus.pro",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021 Challengers Stage",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "FaZe",
+			"Score": "2-0"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352463,
+		"Team1": {
+			"Name": "Heroic",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Copenhagen Flames",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021 Challengers Stage",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Copenhagen Flames",
+			"Score": "2-1"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352464,
+		"Team1": {
+			"Name": "Astralis",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "GODSENT",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021 Challengers Stage",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Astralis",
+			"Score": "2-0"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352467,
+		"Team1": {
+			"Name": "Heroic",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Entropiq",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021 Challengers Stage",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Entropiq",
+			"Score": "2-1"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352466,
+		"Team1": {
+			"Name": "Virtus.pro",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Spirit",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021 Challengers Stage",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Virtus.pro",
+			"Score": "2-1"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352469,
+		"Team1": {
+			"Name": "Movistar Riders",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "TYLOO",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021 Challengers Stage",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Movistar Riders",
+			"Score": "2-1"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352468,
+		"Team1": {
+			"Name": "BIG",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "ENCE",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021 Challengers Stage",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "ENCE",
+			"Score": "2-1"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352471,
+		"Team1": {
+			"Name": "Astralis",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "paiN",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021 Challengers Stage",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Astralis",
+			"Score": "2-0"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352470,
+		"Team1": {
+			"Name": "MOUZ",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Renegades",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021 Challengers Stage",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "MOUZ",
+			"Score": "2-1"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352472,
+		"Team1": {
+			"Name": "Heroic",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Movistar Riders",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021 Challengers Stage",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Heroic",
+			"Score": "2-0"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352473,
+		"Team1": {
+			"Name": "BIG",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "MOUZ",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021 Challengers Stage",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "MOUZ",
+			"Score": "2-1"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352474,
+		"Team1": {
+			"Name": "Spirit",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Astralis",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021 Challengers Stage",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Astralis",
+			"Score": "2-0"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352475,
+		"Team1": {
+			"Name": "Evil Geniuses",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "FaZe",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "FaZe",
+			"Score": "16-6"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352476,
+		"Team1": {
+			"Name": "G2",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Copenhagen Flames",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "G2",
+			"Score": "16-11"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352477,
+		"Team1": {
+			"Name": "Gambit",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "ENCE",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Gambit",
+			"Score": "16-7"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352478,
+		"Team1": {
+			"Name": "Liquid",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Entropiq",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Entropiq",
+			"Score": "16-9"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352479,
+		"Team1": {
+			"Name": "Vitality",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Virtus.pro",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Virtus.pro",
+			"Score": "16-14"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352480,
+		"Team1": {
+			"Name": "Natus Vincere",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Heroic",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Natus Vincere",
+			"Score": "16-11"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352481,
+		"Team1": {
+			"Name": "NIP",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "MOUZ",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "NIP",
+			"Score": "16-12"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352482,
+		"Team1": {
+			"Name": "FURIA",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Astralis",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Astralis",
+			"Score": "16-10"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352484,
+		"Team1": {
+			"Name": "Evil Geniuses",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Copenhagen Flames",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Copenhagen Flames",
+			"Score": "16-2"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352483,
+		"Team1": {
+			"Name": "G2",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "FaZe",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "G2",
+			"Score": "16-7"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352486,
+		"Team1": {
+			"Name": "Liquid",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "ENCE",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Liquid",
+			"Score": "16-8"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352485,
+		"Team1": {
+			"Name": "Gambit",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Entropiq",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Entropiq",
+			"Score": "16-9"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352488,
+		"Team1": {
+			"Name": "Vitality",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Heroic",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Heroic",
+			"Score": "16-12"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352487,
+		"Team1": {
+			"Name": "Natus Vincere",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Virtus.pro",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Natus Vincere",
+			"Score": "16-4"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352490,
+		"Team1": {
+			"Name": "FURIA",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "MOUZ",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "FURIA",
+			"Score": "16-9"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352489,
+		"Team1": {
+			"Name": "NIP",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Astralis",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "NIP",
+			"Score": "16-1"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352492,
+		"Team1": {
+			"Name": "FaZe",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Copenhagen Flames",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Copenhagen Flames",
+			"Score": "16-6"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352491,
+		"Team1": {
+			"Name": "Gambit",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Virtus.pro",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Gambit",
+			"Score": "16-14"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352494,
+		"Team1": {
+			"Name": "Liquid",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "FURIA",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "FURIA",
+			"Score": "16-9"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352493,
+		"Team1": {
+			"Name": "Astralis",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Heroic",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Heroic",
+			"Score": "16-7"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352496,
+		"Team1": {
+			"Name": "G2",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Entropiq",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "G2",
+			"Score": "2-0"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352495,
+		"Team1": {
+			"Name": "Vitality",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Evil Geniuses",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Vitality",
+			"Score": "2-1"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352498,
+		"Team1": {
+			"Name": "Natus Vincere",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "NIP",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Natus Vincere",
+			"Score": "2-0"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352497,
+		"Team1": {
+			"Name": "MOUZ",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "ENCE",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "MOUZ",
+			"Score": "2-0"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352500,
+		"Team1": {
+			"Name": "FaZe",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Liquid",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "FaZe",
+			"Score": "2-0"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352499,
+		"Team1": {
+			"Name": "Entropiq",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "FURIA",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "FURIA",
+			"Score": "2-1"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352501,
+		"Team1": {
+			"Name": "NIP",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Gambit",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Gambit",
+			"Score": "2-0"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352502,
+		"Team1": {
+			"Name": "Astralis",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Vitality",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Vitality",
+			"Score": "2-1"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352503,
+		"Team1": {
+			"Name": "Heroic",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Copenhagen Flames",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Heroic",
+			"Score": "2-1"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352504,
+		"Team1": {
+			"Name": "Virtus.pro",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "MOUZ",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Virtus.pro",
+			"Score": "2-1"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352505,
+		"Team1": {
+			"Name": "Entropiq",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Vitality",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Vitality",
+			"Score": "2-1"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352506,
+		"Team1": {
+			"Name": "Virtus.pro",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "FaZe",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Virtus.pro",
+			"Score": "2-1"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352507,
+		"Team1": {
+			"Name": "Copenhagen Flames",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "NIP",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "NIP",
+			"Score": "2-1"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352508,
+		"Team1": {
+			"Name": "Heroic",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Virtus.pro",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Heroic",
+			"Score": "2-1"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352509,
+		"Team1": {
+			"Name": "G2",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "NIP",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "G2",
+			"Score": "2-0"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352510,
+		"Team1": {
+			"Name": "Gambit",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "FURIA",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Gambit",
+			"Score": "2-0"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352511,
+		"Team1": {
+			"Name": "Natus Vincere",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Vitality",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Natus Vincere",
+			"Score": "2-0"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352512,
+		"Team1": {
+			"Name": "Heroic",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "G2",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "G2",
+			"Score": "2-1"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352513,
+		"Team1": {
+			"Name": "Gambit",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Natus Vincere",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Natus Vincere",
+			"Score": "2-0"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352728,
+		"Team1": {
+			"Name": "Team GeT_RiGhT",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Copenhagen Flames",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "Showmatch CS:GO",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Team GeT_RiGhT",
+			"Score": "16-9"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352514,
+		"Team1": {
+			"Name": "G2",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Natus Vincere",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "PGL Major Stockholm 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Natus Vincere",
+			"Score": "2-0"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352098,
+		"Team1": {
+			"Name": "MAD Lions",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Lyngby Vikings",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "Pinnacle Fall Series 2",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Lyngby Vikings",
+			"Score": "2-0"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352099,
+		"Team1": {
+			"Name": "Entropiq",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Nemiga",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "Pinnacle Fall Series 2",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Entropiq",
+			"Score": "2-0"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352667,
+		"Team1": {
+			"Name": "1WIN",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Movistar Riders",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "ESEA Premier Season 39 Europe",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Movistar Riders",
+			"Score": "2-1"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352101,
+		"Team1": {
+			"Name": "MOUZ NXT",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Lyngby Vikings",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "Pinnacle Fall Series 2",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Lyngby Vikings",
+			"Score": "2-1"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352102,
+		"Team1": {
+			"Name": "Entropiq",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "HAVU",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "Pinnacle Fall Series 2",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Entropiq",
+			"Score": "2-1"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352784,
+		"Team1": {
+			"Name": "Fiend",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "EC Brugge",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "Funspark ULTI 2021 Europe Regional Series 4 Closed Qualifier",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Fiend",
+			"Score": "2-0"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352762,
+		"Team1": {
+			"Name": "Movistar Riders",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Nemiga",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "ESEA Premier Season 39 Europe",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Movistar Riders",
+			"Score": "2-0"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352103,
+		"Team1": {
+			"Name": "Lyngby Vikings",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Entropiq",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "Pinnacle Fall Series 2",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Entropiq",
+			"Score": "2-1"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352689,
+		"Team1": {
+			"Name": "MAD Lions",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "MOUZ",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "DreamHack Open November 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "MAD Lions",
+			"Score": "2-1"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352688,
+		"Team1": {
+			"Name": "BIG",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "GamerLegion",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "DreamHack Open November 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "BIG",
+			"Score": "2-1"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352603,
+		"Team1": {
+			"Name": "SKADE",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Fiend",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "REPUBLEAGUE TIPOS Season 2",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Fiend",
+			"Score": "2-1"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352690,
+		"Team1": {
+			"Name": "ENCE",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "forZe",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "DreamHack Open November 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "ENCE",
+			"Score": "2-0"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352604,
+		"Team1": {
+			"Name": "Sinners",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Entropiq",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "REPUBLEAGUE TIPOS Season 2",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Entropiq",
+			"Score": "2-0"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352692,
+		"Team1": {
+			"Name": "MAD Lions",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "BIG",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "DreamHack Open November 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "BIG",
+			"Score": "2-0"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352693,
+		"Team1": {
+			"Name": "MOUZ",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "GamerLegion",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "DreamHack Open November 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "MOUZ",
+			"Score": "2-0"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352694,
+		"Team1": {
+			"Name": "forZe",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Spirit",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "DreamHack Open November 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "forZe",
+			"Score": "2-0"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352605,
+		"Team1": {
+			"Name": "Virtus.pro",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Eternal Fire",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "REPUBLEAGUE TIPOS Season 2",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "Eternal Fire",
+			"Score": "2-1"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352689,
+		"Team1": {
+			"Name": "MAD Lions",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "MOUZ",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "DreamHack Open November 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "MAD Lions",
+			"Score": "2-1"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352688,
+		"Team1": {
+			"Name": "BIG",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "GamerLegion",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "DreamHack Open November 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "BIG",
+			"Score": "2-1"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352690,
+		"Team1": {
+			"Name": "ENCE",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "forZe",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "DreamHack Open November 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "ENCE",
+			"Score": "2-0"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352691,
+		"Team1": {
+			"Name": "fnatic",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Spirit",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "DreamHack Open November 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "fnatic",
+			"Score": "2-0"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352692,
+		"Team1": {
+			"Name": "MAD Lions",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "BIG",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "DreamHack Open November 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "BIG",
+			"Score": "2-0"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352693,
+		"Team1": {
+			"Name": "MOUZ",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "GamerLegion",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "DreamHack Open November 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "MOUZ",
+			"Score": "2-0"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352694,
+		"Team1": {
+			"Name": "forZe",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "Spirit",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "DreamHack Open November 2021",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "",
+		"Result": {
+			"Winner": "forZe",
+			"Score": "2-0"
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352695,
+		"Team1": {
+			"Name": "ENCE",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "fnatic",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "DreamHack Open November 2021",
+			"ID": 0,
+			"LogoURL": "https://img-cdn.hltv.org/eventlogo/OBYdYtX-x0vAyEMOgmtQ7P.png?ixlib=java-2.1.0\u0026s=bc8ddffd243fbdc9f93b9114a28094d3"
+		},
+		"Format": "bo3",
+		"Result": {
+			"Winner": "",
+			"Score": ""
+		},
+		"Live": true
+	},
+	{
+		"ID": 2352606,
+		"Team1": {
+			"Name": "Lyngby Vikings",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "00Nation",
+			"ID": 0
+		},
+		"Date": "0001-01-01T00:00:00Z",
+		"Event": {
+			"Name": "REPUBLEAGUE TIPOS Season 2",
+			"ID": 0,
+			"LogoURL": "https://img-cdn.hltv.org/eventlogo/-sEonOzG5OTzladYI4QbUr.png?ixlib=java-2.1.0\u0026s=edaf73202d637dfb569da98aa47c714b"
+		},
+		"Format": "bo3",
+		"Result": {
+			"Winner": "",
+			"Score": ""
+		},
+		"Live": true
+	},
+	{
+		"ID": 2352607,
+		"Team1": {
+			"Name": "Copenhagen Flames",
+			"ID": 7461
+		},
+		"Team2": {
+			"Name": "Dignitas",
+			"ID": 5422
+		},
+		"Date": "2021-11-12T16:00:00+01:00",
+		"Event": {
+			"Name": "REPUBLEAGUE TIPOS Season 2",
+			"ID": 0,
+			"LogoURL": "https://img-cdn.hltv.org/eventlogo/-sEonOzG5OTzladYI4QbUr.png?ixlib=java-2.1.0\u0026s=edaf73202d637dfb569da98aa47c714b"
+		},
+		"Format": "bo3",
+		"Result": {
+			"Winner": "",
+			"Score": ""
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352696,
+		"Team1": {
+			"Name": "MAD Lions",
+			"ID": 8362
+		},
+		"Team2": {
+			"Name": "MOUZ",
+			"ID": 4494
+		},
+		"Date": "2021-11-12T16:00:00+01:00",
+		"Event": {
+			"Name": "DreamHack Open November 2021",
+			"ID": 0,
+			"LogoURL": "https://img-cdn.hltv.org/eventlogo/OBYdYtX-x0vAyEMOgmtQ7P.png?ixlib=java-2.1.0\u0026s=bc8ddffd243fbdc9f93b9114a28094d3"
+		},
+		"Format": "bo3",
+		"Result": {
+			"Winner": "",
+			"Score": ""
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352584,
+		"Team1": {
+			"Name": "Movistar Riders",
+			"ID": 7718
+		},
+		"Team2": {
+			"Name": "SAW",
+			"ID": 10567
+		},
+		"Date": "2021-11-12T19:00:00+01:00",
+		"Event": {
+			"Name": "ESL Masters Spain Season 10 Finals",
+			"ID": 0,
+			"LogoURL": "https://img-cdn.hltv.org/eventlogo/BdkXDvh27aC1F2IS_WaWGY.png?ixlib=java-2.1.0\u0026s=0324a59c19785f7247f0f3904caebf17"
+		},
+		"Format": "bo3",
+		"Result": {
+			"Winner": "",
+			"Score": ""
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352697,
+		"Team1": {
+			"Name": "forZe",
+			"ID": 8135
+		},
+		"Team2": {
+			"Name": "forZe",
+			"ID": 0
+		},
+		"Date": "2021-11-12T19:15:00+01:00",
+		"Event": {
+			"Name": "DreamHack Open November 2021",
+			"ID": 0,
+			"LogoURL": "https://img-cdn.hltv.org/eventlogo/OBYdYtX-x0vAyEMOgmtQ7P.png?ixlib=java-2.1.0\u0026s=bc8ddffd243fbdc9f93b9114a28094d3"
+		},
+		"Format": "bo3",
+		"Result": {
+			"Winner": "",
+			"Score": ""
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352698,
+		"Team1": {
+			"Name": "",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "",
+			"ID": 0
+		},
+		"Date": "2021-11-13T16:00:00+01:00",
+		"Event": {
+			"Name": "",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "bo3",
+		"Result": {
+			"Winner": "",
+			"Score": ""
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352839,
+		"Team1": {
+			"Name": "Fiend",
+			"ID": 11066
+		},
+		"Team2": {
+			"Name": "D13",
+			"ID": 8607
+		},
+		"Date": "2021-11-13T17:00:00+01:00",
+		"Event": {
+			"Name": "Funspark ULTI 2021 Europe Regional Series 4 Closed Qualifier",
+			"ID": 0,
+			"LogoURL": "https://img-cdn.hltv.org/eventlogo/eZuADJhebwE9L3-2jJV-wH.png?ixlib=java-2.1.0\u0026s=25751205e0ab86f0b1492e91816d9ba9"
+		},
+		"Format": "bo3",
+		"Result": {
+			"Winner": "",
+			"Score": ""
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352699,
+		"Team1": {
+			"Name": "",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "",
+			"ID": 0
+		},
+		"Date": "2021-11-13T19:15:00+01:00",
+		"Event": {
+			"Name": "",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "bo3",
+		"Result": {
+			"Winner": "",
+			"Score": ""
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352825,
+		"Team1": {
+			"Name": "Fiend",
+			"ID": 11066
+		},
+		"Team2": {
+			"Name": "Budapest Five",
+			"ID": 9802
+		},
+		"Date": "2021-11-14T13:30:00+01:00",
+		"Event": {
+			"Name": "V4 Future Sports Festival 2021 Play-In",
+			"ID": 0,
+			"LogoURL": "https://img-cdn.hltv.org/eventlogo/vrIXpwnjSXU-WPeuTCIcQX.png?ixlib=java-2.1.0\u0026s=e15986df307848c3ad09ccf35dfecd9c"
+		},
+		"Format": "bo1",
+		"Result": {
+			"Winner": "",
+			"Score": ""
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352700,
+		"Team1": {
+			"Name": "",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "",
+			"ID": 0
+		},
+		"Date": "2021-11-14T16:00:00+01:00",
+		"Event": {
+			"Name": "",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "bo5",
+		"Result": {
+			"Winner": "",
+			"Score": ""
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352831,
+		"Team1": {
+			"Name": "Entropiq",
+			"ID": 10831
+		},
+		"Team2": {
+			"Name": "Fiend",
+			"ID": 11066
+		},
+		"Date": "2021-11-16T16:00:00+01:00",
+		"Event": {
+			"Name": "REPUBLEAGUE TIPOS Season 2",
+			"ID": 0,
+			"LogoURL": "https://img-cdn.hltv.org/eventlogo/-sEonOzG5OTzladYI4QbUr.png?ixlib=java-2.1.0\u0026s=edaf73202d637dfb569da98aa47c714b"
+		},
+		"Format": "bo3",
+		"Result": {
+			"Winner": "",
+			"Score": ""
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352807,
+		"Team1": {
+			"Name": "Vitality",
+			"ID": 9565
+		},
+		"Team2": {
+			"Name": "Liquid",
+			"ID": 5973
+		},
+		"Date": "2021-11-24T12:00:00+01:00",
+		"Event": {
+			"Name": "BLAST Premier Fall Final 2021",
+			"ID": 0,
+			"LogoURL": "https://img-cdn.hltv.org/eventlogo/7k60AiYcHhC1rCcJGWWUvx.png?ixlib=java-2.1.0\u0026s=fe4c3fac9c9b160179c609ce005f6a2c"
+		},
+		"Format": "bo3",
+		"Result": {
+			"Winner": "",
+			"Score": ""
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352808,
+		"Team1": {
+			"Name": "Heroic",
+			"ID": 7175
+		},
+		"Team2": {
+			"Name": "FaZe",
+			"ID": 6667
+		},
+		"Date": "2021-11-24T15:00:00+01:00",
+		"Event": {
+			"Name": "BLAST Premier Fall Final 2021",
+			"ID": 0,
+			"LogoURL": "https://img-cdn.hltv.org/eventlogo/7k60AiYcHhC1rCcJGWWUvx.png?ixlib=java-2.1.0\u0026s=fe4c3fac9c9b160179c609ce005f6a2c"
+		},
+		"Format": "bo3",
+		"Result": {
+			"Winner": "",
+			"Score": ""
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352809,
+		"Team1": {
+			"Name": "Natus Vincere",
+			"ID": 4608
+		},
+		"Team2": {
+			"Name": "BIG",
+			"ID": 7532
+		},
+		"Date": "2021-11-24T18:00:00+01:00",
+		"Event": {
+			"Name": "BLAST Premier Fall Final 2021",
+			"ID": 0,
+			"LogoURL": "https://img-cdn.hltv.org/eventlogo/7k60AiYcHhC1rCcJGWWUvx.png?ixlib=java-2.1.0\u0026s=fe4c3fac9c9b160179c609ce005f6a2c"
+		},
+		"Format": "bo3",
+		"Result": {
+			"Winner": "",
+			"Score": ""
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352810,
+		"Team1": {
+			"Name": "NIP",
+			"ID": 4411
+		},
+		"Team2": {
+			"Name": "Astralis",
+			"ID": 6665
+		},
+		"Date": "2021-11-24T21:00:00+01:00",
+		"Event": {
+			"Name": "BLAST Premier Fall Final 2021",
+			"ID": 0,
+			"LogoURL": "https://img-cdn.hltv.org/eventlogo/7k60AiYcHhC1rCcJGWWUvx.png?ixlib=java-2.1.0\u0026s=fe4c3fac9c9b160179c609ce005f6a2c"
+		},
+		"Format": "bo3",
+		"Result": {
+			"Winner": "",
+			"Score": ""
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352811,
+		"Team1": {
+			"Name": "",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "",
+			"ID": 0
+		},
+		"Date": "2021-11-25T15:00:00+01:00",
+		"Event": {
+			"Name": "",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "bo3",
+		"Result": {
+			"Winner": "",
+			"Score": ""
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352812,
+		"Team1": {
+			"Name": "",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "",
+			"ID": 0
+		},
+		"Date": "2021-11-25T18:00:00+01:00",
+		"Event": {
+			"Name": "",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "bo3",
+		"Result": {
+			"Winner": "",
+			"Score": ""
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352813,
+		"Team1": {
+			"Name": "",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "",
+			"ID": 0
+		},
+		"Date": "2021-11-26T13:30:00+01:00",
+		"Event": {
+			"Name": "",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "bo3",
+		"Result": {
+			"Winner": "",
+			"Score": ""
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352814,
+		"Team1": {
+			"Name": "",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "",
+			"ID": 0
+		},
+		"Date": "2021-11-26T16:30:00+01:00",
+		"Event": {
+			"Name": "",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "bo3",
+		"Result": {
+			"Winner": "",
+			"Score": ""
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352815,
+		"Team1": {
+			"Name": "",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "",
+			"ID": 0
+		},
+		"Date": "2021-11-26T19:30:00+01:00",
+		"Event": {
+			"Name": "",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "bo3",
+		"Result": {
+			"Winner": "",
+			"Score": ""
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352816,
+		"Team1": {
+			"Name": "",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "",
+			"ID": 0
+		},
+		"Date": "2021-11-27T13:30:00+01:00",
+		"Event": {
+			"Name": "",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "bo3",
+		"Result": {
+			"Winner": "",
+			"Score": ""
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352817,
+		"Team1": {
+			"Name": "",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "",
+			"ID": 0
+		},
+		"Date": "2021-11-27T16:30:00+01:00",
+		"Event": {
+			"Name": "",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "bo3",
+		"Result": {
+			"Winner": "",
+			"Score": ""
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352818,
+		"Team1": {
+			"Name": "",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "",
+			"ID": 0
+		},
+		"Date": "2021-11-27T19:30:00+01:00",
+		"Event": {
+			"Name": "",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "bo3",
+		"Result": {
+			"Winner": "",
+			"Score": ""
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352819,
+		"Team1": {
+			"Name": "",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "",
+			"ID": 0
+		},
+		"Date": "2021-11-28T15:30:00+01:00",
+		"Event": {
+			"Name": "",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "bo3",
+		"Result": {
+			"Winner": "",
+			"Score": ""
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352820,
+		"Team1": {
+			"Name": "",
+			"ID": 0
+		},
+		"Team2": {
+			"Name": "",
+			"ID": 0
+		},
+		"Date": "2021-11-28T19:30:00+01:00",
+		"Event": {
+			"Name": "",
+			"ID": 0,
+			"LogoURL": ""
+		},
+		"Format": "bo3",
+		"Result": {
+			"Winner": "",
+			"Score": ""
+		},
+		"Live": false
+	},
+	{
+		"ID": 2352765,
+		"Team1": {
+			"Name": "Movistar Riders",
+			"ID": 7718
+		},
+		"Team2": {
+			"Name": "LDLC",
+			"ID": 4674
+		},
+		"Date": "2021-12-01T19:00:00+01:00",
+		"Event": {
+			"Name": "ESEA Premier Season 39 Europe",
+			"ID": 0,
+			"LogoURL": "https://img-cdn.hltv.org/eventlogo/b75aNG0i4UVPNQHX_Tq-Zq.png?ixlib=java-2.1.0\u0026s=a41982a53b2a3d56ca657c6f6335259d"
+		},
+		"Format": "bo3",
+		"Result": {
+			"Winner": "",
+			"Score": ""
+		},
+		"Live": false
+	}
+]

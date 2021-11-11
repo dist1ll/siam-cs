@@ -37,7 +37,7 @@ func TestOracle_SimpleSmallData(t *testing.T) {
 	// Check if data is being written to the AlgorandBuffer
 	contains := buffer.ContainsWithin(CreateWinnerMap(matchData), time.Second)
 	assert.True(t, contains)
-
+	
 	// Stop oracle
 	oracle.Stop()
 }
