@@ -132,14 +132,28 @@ func (h *HLTV) GetPastMatches() ([]Match, error) {
 func (h *HLTV) GetFutureMatches() ([]Match, error) {
 	doc := h.UpcomingPage
 	// Get top tier matches
-	matches := make([]Match, 0, 100)
+	matches := getMatchesFromMatchesPage(doc, ".liveMatch")
+	// Set all live matches to Live=true
+	for i, _ := range matches {
+		matches[i].Live = true
+	}
+	matches = append(matches, getMatchesFromMatchesPage(doc, ".upcomingMatch")...)
+	return matches, nil
+}
 
-	doc.Find(".upcomingMatch").Each(func(i int, selection *goquery.Selection) {
+// getMatchesFromMatchesPage returns a []Match slice containing matches parsed from the upcoming matches
+// page. There are two categories as of now, live and upcoming, specified in the matchType string
+func getMatchesFromMatchesPage(doc *goquery.Document, matchType string) []Match {
+	matches := make([]Match, 0)
+	doc.Find(matchType).Each(func(i int, selection *goquery.Selection) {
 		matchHref, _ := selection.Find("a.match").First().Attr("href")
 		matchID, _ := strconv.Atoi(strings.Split(matchHref, "/")[2])
-		timeRaw, _ := selection.Find(".matchTime").First().Attr("data-unix")
-		matchTime, _ := strconv.ParseInt(timeRaw[:len(timeRaw)-3], 10, 64)
-		date := time.Unix(matchTime, 0)
+		timeRaw, exists := selection.Find(".matchTime").First().Attr("data-unix")
+		date := time.Time{}
+		if exists {
+			matchTime, _ := strconv.ParseInt(timeRaw[:len(timeRaw)-3], 10, 64)
+			date = time.Unix(matchTime, 0)
+		}
 
 		event := selection.Find(".matchEventName").First().Text()
 		eventID, _ := strconv.Atoi(
@@ -148,11 +162,11 @@ func (h *HLTV) GetFutureMatches() ([]Match, error) {
 
 		format := selection.Find(".matchMeta").First().Text()
 
-		team1 := selection.Find(".team1 .matchTeamName").First().Text()
+		team1 := selection.Find(".matchTeamName").First().Text()
 		team1IDStr, _ := selection.Attr("team1")
 		team1ID, _ := strconv.Atoi(team1IDStr)
 
-		team2 := selection.Find(".team2 .matchTeamName").Last().Text()
+		team2 := selection.Find(".matchTeamName").Last().Text()
 		team2IDStr, _ := selection.Attr("team2")
 		team2ID, _ := strconv.Atoi(team2IDStr)
 
@@ -178,6 +192,5 @@ func (h *HLTV) GetFutureMatches() ([]Match, error) {
 
 		matches = append(matches, match)
 	})
-
-	return matches, nil
+	return matches
 }

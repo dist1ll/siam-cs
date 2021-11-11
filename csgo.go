@@ -26,6 +26,15 @@ type Match struct {
 	Event  Event
 	Format string
 	Result Result
+	Live   bool
+}
+
+// ReverseMatches reverses the order of a match array.
+// TODO: Replace this with generics when 1.18 is released.
+func ReverseMatches(s []Match) {
+	for i, j := 0, len(s)-1; i < j; i, j = i+1, j-1 {
+		s[i], s[j] = s[j], s[i]
+	}
 }
 
 type Result struct {
