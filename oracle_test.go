@@ -32,11 +32,11 @@ func TestOracle_SimpleSmallData(t *testing.T) {
 	oracle.Serve()
 
 	// Set match data to stub
-	matchData := generator.GetData()
-	stub.SetMatches(matchData, 5)
+	past, future := generator.GetData()
+	stub.SetMatches(past, future)
 
 	// Check if data is being written to the AlgorandBuffer
-	contains := buffer.ContainsWithin(CreateWinnerMap(matchData), time.Second)
+	contains := buffer.ContainsWithin(CreateWinnerMap(past), time.Second)
 	assert.True(t, contains)
 
 	// Stop oracle
