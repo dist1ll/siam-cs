@@ -1,6 +1,10 @@
 package csgo
 
-import "github.com/m2q/siam-cs/model"
+import (
+	"encoding/json"
+	"github.com/m2q/siam-cs/model"
+	"io/ioutil"
+)
 
 // API is a provider of CSGO match data. It provides methods for fetching past and
 // future matches. Which matches are selected is up to the API implementation.
@@ -35,4 +39,15 @@ func (s *StubAPI) GetPastMatches() ([]model.Match, error) {
 // GetFutureMatches returns a static list of future matches, that can be set via SetMatches
 func (s *StubAPI) GetFutureMatches() ([]model.Match, error) {
 	return s.Future, nil
+}
+
+func CreateData() {
+	hltv := &HLTV{}
+	hltv.Fetch()
+	p, _ := hltv.GetPastMatches()
+	ReverseMatches(p)
+	f, _ := hltv.GetFutureMatches()
+	p = append(p, f...)
+	file, _ := json.MarshalIndent(p, "", "\t")
+	_ = ioutil.WriteFile("./generator/reference_data.json", file, 0644)
 }

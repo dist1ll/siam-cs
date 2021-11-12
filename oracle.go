@@ -21,6 +21,11 @@ type Oracle struct {
 
 // OracleConfig defines the oracles behavior
 type OracleConfig struct {
+	// PastMatchesTTL is the minimum duration that a past match should live on the blockchain.
+	// The duration is measured starting from the model.Match Date field. A past match that is
+	// published on the chain will remain on it for this time.
+	PastMatchesTTL time.Duration
+
 	// PrimaryAPI is the primary source of information. Only data proposed from this API
 	// is put onto the blockchain.
 	PrimaryAPI API
@@ -36,7 +41,7 @@ type OracleConfig struct {
 	MaxVerifyTime time.Duration
 
 	// RefreshInterval is the pause between two API fetch commands.
-	// If the API access a rate-limited location, then set RefreshInterval low enough
+	// If the API accesses a rate-limited resource, then set RefreshInterval high enough
 	// as to not trigger a rate-limit or blacklist event.
 	RefreshInterval time.Duration
 
@@ -76,7 +81,34 @@ func (o *Oracle) Serve() {
 // serve contains the actual implementation of the Oracle behavior.
 func (o *Oracle) serve(ctx context.Context) {
 	for ctx.Err() == nil {
+		// Update Matches
+		err := o.updateLocalMatches()
+		if err != nil {
+			select {
+			case <-ctx.Done():
+				return
+			case <-time.After(o.cfg.RefreshInterval):
+				continue
+			}
+		}
+
 	}
+}
+
+// updateLocalMatches updates the Oracles lists of matches, by querying the API.
+// How often this method is called should depend on OracleConfig.RefreshInterval.
+func (o *Oracle) updateLocalMatches() error {
+	f, err := o.cfg.PrimaryAPI.GetFutureMatches()
+	if err != nil {
+		return err
+	}
+	p, err := o.cfg.PrimaryAPI.GetPastMatches()
+	if err != nil {
+		return err
+	}
+	o.futureMatches = f
+	o.pastMatches = p
+	return nil
 }
 
 // Stop signals the Oracle to stop its goroutine and stop the siam.AlgorandBuffer
