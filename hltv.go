@@ -94,11 +94,20 @@ func (h *HLTV) GetPastMatches() ([]model.Match, error) {
 
 	matches := make([]model.Match, 0, 100)
 
-	doc.Find(".result").Each(func(i int, selection *goquery.Selection) {
+	doc.Find(".result-con").Each(func(i int, sel *goquery.Selection) {
+		selection := sel.Find(".result").First()
+
 		tmp, _ := selection.Parent().Attr("href")
 		matchID, _ := strconv.Atoi(strings.Split(strings.TrimPrefix(tmp, "/matches/"), "/")[0])
 		event := selection.Find(".event-name").First().Text()
-
+		timeRaw, exists := sel.Attr("data-zonedgrouping-entry-unix")
+		date := time.Time{}
+		if exists {
+			matchTime, _ := strconv.ParseInt(timeRaw[:len(timeRaw)-3], 10, 64)
+			date = time.Unix(matchTime, 0)
+		} else {
+			return
+		}
 		team1 := selection.Find(".team1").First().Find(".team").First().Text()
 		team2 := selection.Find(".team2").First().Find(".team").First().Text()
 
@@ -118,6 +127,7 @@ func (h *HLTV) GetPastMatches() ([]model.Match, error) {
 			Event: model.Event{
 				Name: event,
 			},
+			Date: date,
 			Result: model.Result{
 				Winner: winner,
 				Score:  scoreWon + "-" + scoreLost,

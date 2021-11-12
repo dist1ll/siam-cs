@@ -2,14 +2,6 @@ package csgo
 
 import "github.com/m2q/siam-cs/model"
 
-// ReverseMatches reverses the order of a match array.
-// TODO: Replace this with generics when 1.18 is released.
-func ReverseMatches(s []model.Match) {
-	for i, j := 0, len(s)-1; i < j; i, j = i+1, j-1 {
-		s[i], s[j] = s[j], s[i]
-	}
-}
-
 // API is a provider of CSGO match data. It provides methods for fetching past and
 // future matches. Which matches are selected is up to the API implementation.
 type API interface {

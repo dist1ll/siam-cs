@@ -10,7 +10,6 @@ import (
 )
 
 func main() {
-
 	// Create AlgorandBuffer
 	b, err := siam.CreateAlgorandBuffer(client.CreateAlgorandClientMock("", ""),
 		client.GeneratePrivateKey64())
