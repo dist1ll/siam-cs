@@ -3,6 +3,7 @@ package csgo
 import (
 	"context"
 	siam "github.com/m2q/algo-siam"
+	"github.com/m2q/algo-siam/client"
 	"github.com/m2q/siam-cs/model"
 	"sync"
 	"time"
@@ -88,7 +89,11 @@ func (o *Oracle) serve(ctx context.Context) {
 		}
 
 		// Generate desired state
-		// desired := ConstructDesiredState(o.pastMatches, o.futureMatches, client.GlobalBytes)
+		desired := ConstructDesiredState(o.pastMatches, o.futureMatches, client.GlobalBytes)
+		data := CreateWinnerMap(desired)
+
+		o.buffer.PutElements(data)
+		break
 	}
 }
 

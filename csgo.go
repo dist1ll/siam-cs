@@ -45,7 +45,6 @@ func CreateData() {
 	hltv := &HLTV{}
 	hltv.Fetch()
 	p, _ := hltv.GetPastMatches()
-	ReverseMatches(p)
 	f, _ := hltv.GetFutureMatches()
 	p = append(p, f...)
 	file, _ := json.MarshalIndent(p, "", "\t")

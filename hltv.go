@@ -136,7 +136,8 @@ func (h *HLTV) GetPastMatches() ([]model.Match, error) {
 
 		matches = append(matches, match)
 	})
-
+	// past matches are in reverse order on hltv page
+	ReverseMatches(matches)
 	return matches, nil
 }
 

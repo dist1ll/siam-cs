@@ -21,6 +21,7 @@ func setupOracleMockedAPI() (*Oracle, *siam.AlgorandBuffer, *StubAPI) {
 	cfg := &OracleConfig{
 		PrimaryAPI:      api,
 		RefreshInterval: 0,
+		SiamCfg:         &siam.ManageConfig{},
 	}
 	o := NewOracle(buffer, cfg)
 	return o, buffer, api
@@ -36,8 +37,8 @@ func TestOracle_SimpleSmallData(t *testing.T) {
 	stub.SetMatches(past, future)
 
 	// Check if desired state is written by Oracle
-	desired := ConstructDesiredState(oracle.pastMatches, oracle.futureMatches, client.GlobalBytes)
-	contains := buffer.ContainsWithin(CreateWinnerMap(desired), time.Second)
+	desired := ConstructDesiredState(past, future, client.GlobalBytes)
+	contains := buffer.ContainsWithin(CreateWinnerMap(desired), time.Second*5)
 	assert.True(t, contains)
 
 	// Stop oracle
