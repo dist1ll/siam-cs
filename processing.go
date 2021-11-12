@@ -1,6 +1,14 @@
 package csgo
 
-import "github.com/m2q/siam-cs/model"
+import (
+	"github.com/m2q/siam-cs/model"
+	"time"
+)
+
+// PastMatchesTTL is the minimum duration that a past match should live on the blockchain.
+// The duration is measured starting from the model.Match Date field. A past match that is
+// published on the chain will remain on it for this time.
+const PastMatchesTTL = time.Hour * 72 // 3 days
 
 // CreateWinnerMap converts a slice []Match into a map, where the key is the match ID,
 // and the value is the Match winner. If there is no winner yet, the value will be empty.
@@ -11,11 +19,11 @@ func CreateWinnerMap(m []model.Match) map[string]string {
 // ConstructDesiredState returns the desired state of the AlgorandBuffer that the Oracle wishes
 // to achieve. There are two factors for desirability.
 //
-//  1) Past matches should remain on the buffer until their Date is older than the
-//     OracleConfig.PastMatchesTTL.
+//  1) Past matches should remain on the buffer until their Date is older than the PastMatchesTTL
 //  2) Remove past matches that are older than their TTL.
 func ConstructDesiredState(past []model.Match, future []model.Match, size int) []model.Match {
-	return nil
+	_, withinTTL := SplitMatchesAge(past, PastMatchesTTL)
+	return withinTTL
 }
 
 // ReverseMatches reverses the order of a match array.

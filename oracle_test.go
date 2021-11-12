@@ -19,8 +19,7 @@ func setupOracleMockedAPI() (*Oracle, *siam.AlgorandBuffer, *StubAPI) {
 	}
 	api := &StubAPI{}
 	cfg := &OracleConfig{
-		PastMatchesTTL:  time.Hour * 72, // 3 days
-		PrimaryAPI:      nil,
+		PrimaryAPI:      api,
 		RefreshInterval: 0,
 	}
 	o := NewOracle(buffer, cfg)

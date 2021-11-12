@@ -21,11 +21,6 @@ type Oracle struct {
 
 // OracleConfig defines the oracles behavior
 type OracleConfig struct {
-	// PastMatchesTTL is the minimum duration that a past match should live on the blockchain.
-	// The duration is measured starting from the model.Match Date field. A past match that is
-	// published on the chain will remain on it for this time.
-	PastMatchesTTL time.Duration
-
 	// PrimaryAPI is the primary source of information. Only data proposed from this API
 	// is put onto the blockchain.
 	PrimaryAPI API
@@ -92,6 +87,8 @@ func (o *Oracle) serve(ctx context.Context) {
 			}
 		}
 
+		// Generate desired state
+		// desired := ConstructDesiredState(o.pastMatches, o.futureMatches, client.GlobalBytes)
 	}
 }
 
