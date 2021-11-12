@@ -6,7 +6,9 @@ package generator
 import (
 	_ "embed"
 	"encoding/json"
+	csgo "github.com/m2q/siam-cs"
 	"github.com/m2q/siam-cs/model"
+	"io/ioutil"
 )
 
 // refRaw contains real reference match data as a raw json string. The data is sorted, so
@@ -38,4 +40,23 @@ func GetData() ([]model.Match, []model.Match) {
 		}
 	}
 	return nil, result
+}
+
+func CreateData() {
+	hltv := &csgo.HLTV{}
+	hltv.Fetch()
+	p, _ := hltv.GetPastMatches()
+	ReverseMatches(p)
+	f, _ := hltv.GetFutureMatches()
+	p = append(p, f...)
+	file, _ := json.MarshalIndent(p, "", "\t")
+	_ = ioutil.WriteFile("./generator/reference_data.json", file, 0644)
+}
+
+// ReverseMatches reverses the order of a match array.
+// TODO: Replace this with generics when 1.18 is released.
+func ReverseMatches(s []model.Match) {
+	for i, j := 0, len(s)-1; i < j; i, j = i+1, j-1 {
+		s[i], s[j] = s[j], s[i]
+	}
 }
