@@ -1,6 +1,7 @@
 package csgo
 
 import (
+	"fmt"
 	siam "github.com/m2q/algo-siam"
 	"github.com/m2q/algo-siam/client"
 	"github.com/m2q/siam-cs/generator"
@@ -28,17 +29,37 @@ func setupOracleMockedAPI() (*Oracle, *siam.AlgorandBuffer, *StubAPI) {
 }
 
 // Tests if the Oracle writes the data provided by the API stub to the AlgorandBuffer
-func TestOracle_SimpleSmallData(t *testing.T) {
+func TestOracle_SimpleFill(t *testing.T) {
 	oracle, buffer, stub := setupOracleMockedAPI()
 	oracle.Serve()
 
 	// Set match data to stub
-	past, future := generator.GetData()
+	past, future := generator.GetData(time.Now())
 	stub.SetMatches(past, future)
 
 	// Check if desired state is written by Oracle
 	desired := ConstructDesiredState(past, future, client.GlobalBytes)
-	contains := buffer.ContainsWithin(CreateWinnerMap(desired), time.Second*5)
+	contains := buffer.ContainsWithin(desired, time.Second*5)
+	assert.True(t, contains)
+
+	// Stop oracle
+	oracle.Stop()
+}
+
+func TestOracle_OverrideScenario1(t *testing.T) {
+	oracle, buffer, stub := setupOracleMockedAPI()
+	oracle.Serve()
+
+	// Set match data to stub
+	past, future := generator.GetData(time.Now())
+	stub.SetMatches(past, future)
+
+	fmt.Println(past)
+	// Fill buffer with data
+
+	// Check if desired state is written by Oracle
+	desired := ConstructDesiredState(past, future, client.GlobalBytes)
+	contains := buffer.ContainsWithin(desired, time.Second*5)
 	assert.True(t, contains)
 
 	// Stop oracle

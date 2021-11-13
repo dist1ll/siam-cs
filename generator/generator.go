@@ -7,6 +7,7 @@ import (
 	_ "embed"
 	"encoding/json"
 	"github.com/m2q/siam-cs/model"
+	"time"
 )
 
 // refRaw contains real reference match data as a raw json string. The data is sorted, so
@@ -25,17 +26,27 @@ func init() {
 	}
 }
 
-// GetData returns a sample of real data. A combination of past and future matches.
-// First return value is past, second is future matches.
-func GetData() ([]model.Match, []model.Match) {
+// GetData returns a time-normalized sample of real data. A combination of past and
+// future matches. First return value is past, second is future matches.
+// Note: The Date fields are normalized w.r.t the reference time. That means that the
+// MOST recent past match has a date of refTime, and all other matches are adjusted
+// according to this delta
+func GetData(refTime time.Time) ([]model.Match, []model.Match) {
 	// copy reference data
 	result := make([]model.Match, len(ref))
 	copy(result, ref)
-	// split data into past and future matches. Note that data has to be sorted.
+	// find index of last past match
+	lastPast := len(result)
 	for i, v := range result {
 		if v.Result.Winner == "" {
-			return result[:i], result[i:]
+			lastPast = i
+			break
 		}
 	}
-	return nil, result
+	// normalize time
+	diff := refTime.Sub(result[lastPast].Date)
+	for i, _ := range result {
+		result[i].Date = result[i].Date.Add(diff)
+	}
+	return result[:lastPast], result[lastPast:]
 }

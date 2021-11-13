@@ -148,6 +148,7 @@ func (h *HLTV) GetFutureMatches() ([]model.Match, error) {
 	// Set all live matches to Live=true
 	for i, _ := range matches {
 		matches[i].Live = true
+		matches[i].Date = time.Now()
 	}
 	matches = append(matches, getMatchesFromMatchesPage(doc, ".upcomingMatch")...)
 	return matches, nil

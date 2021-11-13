@@ -26,9 +26,12 @@ func CreateWinnerMap(m []model.Match) map[string]string {
 //
 //  1) Past matches should remain on the buffer until their Date is older than the PastMatchesTTL
 //  2) Remove past matches that are older than their TTL.
-func ConstructDesiredState(past []model.Match, future []model.Match, l int) []model.Match {
+//
+// The desired state also depends on the current time of the system (e.g. because of wanting
+// to discard old data).
+func ConstructDesiredState(past []model.Match, future []model.Match, l int) map[string]string {
 	// cut off TTL
-	pastTTL, desired := SplitMatchesAge(past, PastMatchesTTL)
+	pastTTL, desired := SplitMatchesAge(past, PastMatchesTTL, time.Now())
 	// append future matches
 	desired = append(desired, future...)
 	// truncate if necessary
@@ -43,7 +46,7 @@ func ConstructDesiredState(past []model.Match, future []model.Match, l int) []mo
 			desired = append(pastTTL[len(pastTTL)-d:], desired...)
 		}
 	}
-	return desired
+	return CreateWinnerMap(desired)
 }
 
 // ReverseMatches reverses the order of a match array.

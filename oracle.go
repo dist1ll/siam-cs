@@ -90,9 +90,8 @@ func (o *Oracle) serve(ctx context.Context) {
 
 		// Generate desired state
 		desired := ConstructDesiredState(o.pastMatches, o.futureMatches, client.GlobalBytes)
-		data := CreateWinnerMap(desired)
 
-		o.buffer.PutElements(data)
+		o.buffer.PutElements(desired)
 		break
 	}
 }
