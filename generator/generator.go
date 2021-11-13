@@ -50,3 +50,42 @@ func GetData(refTime time.Time) ([]model.Match, []model.Match) {
 	}
 	return result[:lastPast], result[lastPast:]
 }
+
+// NormalizeTime shifts the Dates of all matches by the difference between refTime
+// and the last past match. Essentially, this means that the time of the data is
+// transposed so that the most recent past match happened exactly at refTime.
+func NormalizeTime(past []model.Match, future []model.Match, refTime time.Time) {
+	// last past match
+	diff := refTime.Sub(past[len(past)-1].Date)
+	// shift past matches
+	for i, _ := range past {
+		past[i].Date = past[i].Date.Add(diff)
+	}
+	// also shift future matches
+	for i, _ := range future {
+		future[i].Date = future[i].Date.Add(diff)
+	}
+}
+
+// ProgressTime lets a specified number of future matches conclude, and
+// re-normalizes the time. Effectively, this simulates a passing of time.
+func ProgressTime(past, future []model.Match, matchCount int) ([]model.Match, []model.Match) {
+	// matchCount can't exceed future slice length
+	if matchCount > len(future) {
+		matchCount = len(future)
+	}
+	// set result data
+	for i := 0; i < matchCount; i++ {
+		// just set random stuff
+		future[i].Result.Winner = future[i].Team1.Name
+		future[i].Result.Score = "16-10"
+		// assume that the game took 1 hour, so the Date is set later
+		future[i].Date = future[i].Date.Add(time.Hour)
+	}
+	// re-slice past and future boundaries
+	past = append(past, future[:matchCount]...)
+	future = future[matchCount:]
+
+	NormalizeTime(past, future, time.Now())
+	return past, future
+}
