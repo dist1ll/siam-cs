@@ -48,5 +48,5 @@ func CreateData() {
 	f, _ := hltv.GetFutureMatches()
 	p = append(p, f...)
 	file, _ := json.MarshalIndent(p, "", "\t")
-	_ = ioutil.WriteFile("./generator/reference_data.json", file, 0644)
+	_ = ioutil.WriteFile("./generator/reference_data_x.json", file, 0644)
 }
