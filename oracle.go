@@ -97,7 +97,7 @@ func (o *Oracle) serve(ctx context.Context) time.Duration {
 	}
 	// Generate desired state
 	desired := ConstructDesiredState(o.pastMatches, o.futureMatches, client.GlobalBytes)
-	data, err := o.buffer.GetBuffer()
+	data, err := o.buffer.GetBuffer(ctx)
 	if err != nil {
 		return o.cfg.RefreshInterval
 	}
@@ -134,7 +134,7 @@ func (o *Oracle) updateLocalMatches() error {
 // waitForFlush waits until the AlgorandBuffer has reached the desired state.
 func (o *Oracle) waitForFlush(ctx context.Context, desired map[string]string) {
 	for ctx.Err() != nil {
-		d, err := o.buffer.GetBuffer()
+		d, err := o.buffer.GetBuffer(ctx)
 		// compare string representation of maps
 		if err != nil && fmt.Sprint(d) == fmt.Sprint(desired) {
 			break
