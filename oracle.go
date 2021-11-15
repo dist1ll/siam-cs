@@ -2,11 +2,13 @@ package csgo
 
 import (
 	"context"
+	"fmt"
+	"sync"
+	"time"
+
 	siam "github.com/m2q/algo-siam"
 	"github.com/m2q/algo-siam/client"
 	"github.com/m2q/siam-cs/model"
-	"sync"
-	"time"
 )
 
 // Oracle aggregates and stores all HLTV data
@@ -67,33 +69,50 @@ func (o *Oracle) Serve() {
 	wg.Add(1)
 	go func() {
 		defer wg.Done()
-		o.serve(ctx)
+
+		// Serving Loop
+		for ctx.Err() == nil {
+			sleep := o.serve(ctx)
+			if sleep != 0 {
+				select {
+				case <-ctx.Done():
+					return
+				case <-time.After(sleep):
+					continue
+				}
+			}
+		}
 	}()
 
 	o.cancelOracle = cancel
 	o.wgExit = wg
 }
 
-// serve contains the actual implementation of the Oracle behavior.
-func (o *Oracle) serve(ctx context.Context) {
-	for ctx.Err() == nil {
-		// Update Matches
-		err := o.updateLocalMatches()
-		if err != nil {
-			select {
-			case <-ctx.Done():
-				return
-			case <-time.After(o.cfg.RefreshInterval):
-				continue
-			}
-		}
-
-		// Generate desired state
-		desired := ConstructDesiredState(o.pastMatches, o.futureMatches, client.GlobalBytes)
-
-		o.buffer.PutElements(desired)
-		break
+// serve implements the internals of the Oracle loop. Returns sleep time.
+func (o *Oracle) serve(ctx context.Context) time.Duration {
+	// Update Matches
+	err := o.updateLocalMatches()
+	if err != nil {
+		return o.cfg.RefreshInterval
 	}
+	// Generate desired state
+	desired := ConstructDesiredState(o.pastMatches, o.futureMatches, client.GlobalBytes)
+	data, err := o.buffer.GetBuffer()
+	if err != nil {
+		return o.cfg.RefreshInterval
+	}
+	put, del := computeOverlap(desired, data)
+	// if no changes, return
+	if len(put)+len(del) == 0 {
+		return o.cfg.RefreshInterval
+	}
+	// otherwise, execute changes
+	o.buffer.DeleteElements(getKeys(del)...)
+	// add and update
+	o.buffer.PutElements(put)
+	// wait until data has been written
+	o.waitForFlush(ctx, desired)
+	return o.cfg.RefreshInterval
 }
 
 // updateLocalMatches updates the Oracles lists of matches, by querying the API.
@@ -110,6 +129,52 @@ func (o *Oracle) updateLocalMatches() error {
 	o.futureMatches = f
 	o.pastMatches = p
 	return nil
+}
+
+// waitForFlush waits until the AlgorandBuffer has reached the desired state.
+func (o *Oracle) waitForFlush(ctx context.Context, desired map[string]string) {
+	for ctx.Err() != nil {
+		d, err := o.buffer.GetBuffer()
+		// compare string representation of maps
+		if err != nil && fmt.Sprint(d) == fmt.Sprint(desired) {
+			break
+		}
+		// sleep according to the siam config
+		time.Sleep(o.cfg.SiamCfg.SleepTime)
+	}
+}
+
+// computeOverlap returns two maps, m1 and m2. m1 contains the map entries of x, for
+// which the keys either don't exist in y, or do exist but with different values than
+// in x. m2 contains map entries of y that don't exist in x.
+func computeOverlap(x, y map[string]string) (m1, m2 map[string]string) {
+	m1 = make(map[string]string)
+	m2 = make(map[string]string)
+
+	for k, v := range x {
+		yv, ok := y[k]
+		// if the key exists in both x and y, and they have the same value, exclude it.
+		if !(ok && v == yv) {
+			m1[k] = v
+		}
+	}
+	for k, v := range y {
+		// keys that exist in y, but not in x
+		if _, ok := x[k]; !ok {
+			m2[k] = v
+		}
+	}
+	return m1, m2
+}
+
+func getKeys(m map[string]string) []string {
+	s := make([]string, len(m))
+	i := 0
+	for k, _ := range m {
+		s[i] = k
+		i++
+	}
+	return s
 }
 
 // Stop signals the Oracle to stop its goroutine and stop the siam.AlgorandBuffer
