@@ -1,6 +1,7 @@
 package csgo
 
 import (
+	"fmt"
 	siam "github.com/m2q/algo-siam"
 	"github.com/m2q/algo-siam/client"
 	"github.com/m2q/siam-cs/generator"
@@ -70,4 +71,23 @@ func TestOracle_ProgressTime(t *testing.T) {
 	stub.SetMatches(past, future)
 
 	assert.True(t, containsDesiredState(b, past, future, time.Second*2))
+}
+
+func TestOracle_AddNewMatches(t *testing.T) {
+	// Generate Data
+	past, future := generator.GetData(time.Now())
+	// Create Oracle with initial data
+	oracle, b, stub := setupOracleWithData(past, future, t)
+	defer oracle.Stop()
+	// Let one game play out
+	g := generator.GenerateFutureData(future[len(future)-1], 20)
+	future = append(future, g...)
+	stub.SetMatches(past, future)
+
+	assert.True(t, containsDesiredState(b, past, future, time.Second))
+}
+
+func TestOracle_RespectFetchTime(t *testing.T) {
+	fmt.Println("Expect logs at 0.5 second intervals")
+	
 }

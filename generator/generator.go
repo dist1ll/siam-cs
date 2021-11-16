@@ -51,6 +51,26 @@ func GetData(refTime time.Time) ([]model.Match, []model.Match) {
 	return result[:lastPast], result[lastPast:]
 }
 
+// GenerateFutureData returns an artificial array of matches that happen after the given
+// match. Use this method to generate fake "future" matches.
+func GenerateFutureData(m model.Match, n int) []model.Match {
+	data := make([]model.Match, n)
+	// add big offset to visually distinguish future matches
+	id := m.ID + 100000
+	t := m.Date
+	for i := 0; i < n; i++ {
+		// set every subsequent future match 5 hours apart. This is arbitrary.
+		t = t.Add(time.Hour * 5)
+		id++
+		data[i] = model.Match{
+			ID:     id,
+			Date:   t,
+			Result: model.Result{Winner: "G2", Score: "16-11"},
+		}
+	}
+	return data
+}
+
 // NormalizeTime shifts the Dates of all matches by the difference between refTime
 // and the last past match. Essentially, this means that the time of the data is
 // transposed so that the most recent past match happened exactly at refTime.

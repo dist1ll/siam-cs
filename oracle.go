@@ -90,27 +90,31 @@ func (o *Oracle) Serve() {
 
 // serve implements the internals of the Oracle loop. Returns sleep time.
 func (o *Oracle) serve(ctx context.Context) time.Duration {
-	// Update Matches
+
 	err := o.updateLocalMatches()
 	if err != nil {
 		return o.cfg.RefreshInterval
 	}
-	// Generate desired state
+
 	desired := ConstructDesiredState(o.pastMatches, o.futureMatches, client.GlobalBytes)
 	data, err := o.buffer.GetBuffer(ctx)
 	if err != nil {
 		return o.cfg.RefreshInterval
 	}
 	put, del := computeOverlap(desired, data)
-	// if no changes, return
+
 	if len(put)+len(del) == 0 {
 		return o.cfg.RefreshInterval
 	}
-	// otherwise, execute changes
-	o.buffer.DeleteElements(getKeys(del)...)
-	// add and update
-	o.buffer.PutElements(put)
-	// wait until data has been written
+
+	err = o.buffer.DeleteElements(getKeys(del)...)
+	if err != nil {
+		return o.cfg.RefreshInterval
+	}
+	err = o.buffer.PutElements(put)
+	if err != nil {
+		return o.cfg.RefreshInterval
+	}
 	o.waitForFlush(ctx, desired)
 	return o.cfg.RefreshInterval
 }
@@ -135,12 +139,15 @@ func (o *Oracle) updateLocalMatches() error {
 func (o *Oracle) waitForFlush(ctx context.Context, desired map[string]string) {
 	for ctx.Err() != nil {
 		d, err := o.buffer.GetBuffer(ctx)
-		// compare string representation of maps
 		if err != nil && fmt.Sprint(d) == fmt.Sprint(desired) {
 			break
 		}
-		// sleep according to the siam config
-		time.Sleep(o.cfg.SiamCfg.SleepTime)
+		select {
+		case <-ctx.Done():
+			return
+		case <-time.After(o.cfg.SiamCfg.SleepTime):
+			continue
+		}
 	}
 }
 
