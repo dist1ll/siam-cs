@@ -56,10 +56,10 @@ func NewOracle(b *siam.AlgorandBuffer, cfg *OracleConfig) *Oracle {
 	return &Oracle{cfg: cfg, buffer: b}
 }
 
-// Serve spawns a cancelable goroutine that continuously fetches data, and publishes
-// it on the blockchain. It also spawns a managing routine for the siam.AlgorandBuffer.
-// Both goroutines can be cancelled anytime via Stop, which will signal a cancellation
-// via context.CancelFunc and block until both goroutines have finished execution.
+// Serve spawns a cancelable goroutine that aims to keep the AlgorandBuffer
+// in a desired state. See ConstructDesiredState.
+//
+// Any goroutines spawned by the Oracle can be cancelled anytime via Stop.
 func (o *Oracle) Serve() {
 	// Start ManagingRoutine for AlgorandBuffer
 	wg, c := o.buffer.SpawnManagingRoutine(o.cfg.SiamCfg)
@@ -88,7 +88,8 @@ func (o *Oracle) Serve() {
 	o.wgExit = wg
 }
 
-// serve implements the internals of the Oracle loop. Returns sleep time.
+// serve attempts to bring the AlgorandBuffer in a desired state. It returns
+// a minimum time that the caller should wait before executing serve again.
 func (o *Oracle) serve(ctx context.Context) time.Duration {
 
 	err := o.updateLocalMatches()
@@ -97,11 +98,11 @@ func (o *Oracle) serve(ctx context.Context) time.Duration {
 	}
 
 	desired := ConstructDesiredState(o.pastMatches, o.futureMatches, client.GlobalBytes)
-	data, err := o.buffer.GetBuffer(ctx)
+	current, err := o.buffer.GetBuffer(ctx)
 	if err != nil {
 		return o.cfg.RefreshInterval
 	}
-	put, del := computeOverlap(desired, data)
+	put, del := computeOverlap(desired, current)
 
 	if len(put)+len(del) == 0 {
 		return o.cfg.RefreshInterval
@@ -192,6 +193,9 @@ func (o *Oracle) Stop() {
 	}
 	if o.cancelBuffer != nil {
 		o.cancelBuffer()
+	}
+	if o.cancelOracle == nil && o.cancelBuffer == nil {
+		panic("need to run .Serve() before stopping oracle")
 	}
 	o.wgExit.Wait()
 }

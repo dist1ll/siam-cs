@@ -7,22 +7,26 @@ import (
 	"github.com/m2q/siam-cs/generator"
 	"github.com/m2q/siam-cs/model"
 	"github.com/stretchr/testify/assert"
+	"log"
+	"os"
 	"testing"
 	"time"
 )
 
 // setupOracleMockedAPI creates an Oracle instance, initialized with a
 // AlgorandBuffer (client.AlgorandMock) and StubAPI.
-func setupOracleMockedAPI() (*Oracle, *siam.AlgorandBuffer, *StubAPI) {
+func setupOracleMockedAPI(refresh time.Duration) (*Oracle, *siam.AlgorandBuffer, *StubAPI) {
 	c := client.CreateAlgorandClientMock("", "")
 	buffer, err := siam.CreateAlgorandBuffer(c, client.GeneratePrivateKey64())
 	if err != nil {
 		panic(err)
 	}
-	api := &StubAPI{}
+	api := &StubAPI{
+		Logger: log.New(os.Stdout, "  ORACLE  ", log.LstdFlags|log.Lmsgprefix),
+	}
 	cfg := &OracleConfig{
 		PrimaryAPI:      api,
-		RefreshInterval: 0,
+		RefreshInterval: refresh,
 		SiamCfg:         &siam.ManageConfig{},
 	}
 	o := NewOracle(buffer, cfg)
@@ -32,7 +36,7 @@ func setupOracleMockedAPI() (*Oracle, *siam.AlgorandBuffer, *StubAPI) {
 // setupOracleWithData creates an Oracle, Stub and AlgorandBuffer instance, and waits until
 // the Oracle has filled specified data into the AlgorandBuffer.
 func setupOracleWithData(past, future []model.Match, t *testing.T) (*Oracle, *siam.AlgorandBuffer, *StubAPI) {
-	oracle, buffer, stub := setupOracleMockedAPI()
+	oracle, buffer, stub := setupOracleMockedAPI(0)
 	oracle.Serve()
 	// Set match data to stub
 	stub.SetMatches(past, future)
@@ -88,6 +92,13 @@ func TestOracle_AddNewMatches(t *testing.T) {
 }
 
 func TestOracle_RespectFetchTime(t *testing.T) {
-	fmt.Println("Expect logs at 0.5 second intervals")
-	
+	fmt.Print("Expect 4 log prints: \n\n")
+	// Create Oracle with 0.5s refresh time
+	oracle, _, stub := setupOracleMockedAPI(time.Millisecond * 50)
+	oracle.Serve()
+	defer oracle.Stop()
+
+	stub.LogActive = true
+
+	time.Sleep(time.Millisecond * 200)
 }
