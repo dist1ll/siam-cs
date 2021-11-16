@@ -5,14 +5,13 @@ import (
 	"time"
 
 	siam "github.com/m2q/algo-siam"
-	"github.com/m2q/algo-siam/client"
 	"github.com/m2q/siam-cs"
 )
 
 func main() {
+
 	// Create AlgorandBuffer
-	b, err := siam.CreateAlgorandBuffer(client.CreateAlgorandClientMock("", ""),
-		client.GeneratePrivateKey64())
+	b, err := siam.CreateAlgorandBufferFromEnv()
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -21,6 +20,10 @@ func main() {
 	cfg := &csgo.OracleConfig{
 		PrimaryAPI:      &csgo.HLTV{},
 		RefreshInterval: time.Minute,
+		SiamCfg: &siam.ManageConfig{
+			SleepTime:           time.Second * 30,
+			HealthCheckInterval: time.Minute * 3,
+		},
 	}
 
 	// Create Oracle
