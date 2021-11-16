@@ -100,5 +100,5 @@ func TestOracle_RespectFetchTime(t *testing.T) {
 
 	stub.LogActive = true
 
-	time.Sleep(time.Millisecond * 200)
+	time.Sleep(time.Millisecond * 190)
 }

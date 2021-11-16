@@ -11,12 +11,9 @@ import (
 // API is a provider of CSGO match data. It provides methods for fetching past and
 // future matches. Which matches are selected is up to the API implementation.
 type API interface {
-	// GetPastMatches returns a list of past CSGO pro matches.
-	// The reference implementation is provided by HLTV.
-	GetPastMatches() ([]model.Match, error)
-	// GetFutureMatches returns a list of upcoming CSGO pro matches.
-	// The reference implementation is provided by HLTV.
-	GetFutureMatches() ([]model.Match, error)
+	// Fetch returns a list of past and future CSGO pro matches.
+	// The reference implementation is provided by HLTV
+	Fetch() (past, future []model.Match, err error)
 }
 
 // StubAPI is a stub that implements API. You can explicitly set the match data
@@ -35,19 +32,33 @@ func (s *StubAPI) SetMatches(past []model.Match, future []model.Match) {
 	s.Future = future
 }
 
-// GetPastMatches returns a static list of past matches, that can be set via SetMatches
-func (s *StubAPI) GetPastMatches() ([]model.Match, error) {
+// Fetch returns a static list of past and future CSGO pro matches, which
+// can be set via SetMatches.
+func (s *StubAPI) Fetch() (past, future []model.Match, err error) {
 	if s.LogActive {
-		s.Logger.Println("API request past matches")
+		s.Logger.Println("API request matches")
 	}
+	past, err = s.getPastMatches()
+	if err != nil {
+		return nil, nil, err
+	}
+	future, err = s.getFutureMatches()
+	if err != nil {
+		return nil, nil, err
+	}
+	return past, future, nil
+}
+
+// getPastMatches returns a static list of past matches, that can be set via SetMatches
+func (s *StubAPI) getPastMatches() ([]model.Match, error) {
 	if s.Past == nil {
 		return nil, errors.New("API stub has not been assigned")
 	}
 	return s.Past, nil
 }
 
-// GetFutureMatches returns a static list of future matches, that can be set via SetMatches
-func (s *StubAPI) GetFutureMatches() ([]model.Match, error) {
+// getFutureMatches returns a static list of future matches, that can be set via SetMatches
+func (s *StubAPI) getFutureMatches() ([]model.Match, error) {
 	if s.LogActive {
 		s.Logger.Println("API request future matches")
 	}
@@ -60,8 +71,8 @@ func (s *StubAPI) GetFutureMatches() ([]model.Match, error) {
 func CreateData() {
 	hltv := &HLTV{}
 	hltv.Fetch()
-	p, _ := hltv.GetPastMatches()
-	f, _ := hltv.GetFutureMatches()
+	p, _ := hltv.getPastMatches()
+	f, _ := hltv.getFutureMatches()
 	p = append(p, f...)
 	file, _ := json.MarshalIndent(p, "", "\t")
 	_ = ioutil.WriteFile("./generator/reference_data_x.json", file, 0644)

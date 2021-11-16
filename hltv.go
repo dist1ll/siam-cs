@@ -45,42 +45,25 @@ type HLTV struct {
 // Fetch gets the latest version of the HLTV page.
 // Note: Do not abuse this function. Exceeding certain rates can be interpreted as
 // crawling and result in IP ban.
-func (h *HLTV) Fetch() (err error) {
-	h.UpcomingPage, err = GetDocument("https://www.hltv.org/matches?predefinedFilter=top_tier")
+func (h *HLTV) Fetch() (past, future []model.Match, err error) {
+	h.UpcomingPage, err = getDocument("https://www.hltv.org/matches?predefinedFilter=top_tier")
 	if err != nil {
-		return err
+		return nil, nil, err
 	}
-	h.ResultsPage, err = GetDocument("https://www.hltv.org/results?stars=1")
-	return err
-}
-
-// GetDocument performs a GET-Query to the given URL, and creates a goquery-Document from its response.
-func GetDocument(url string) (*goquery.Document, error) {
-	client := &http.Client{}
-	req, err := http.NewRequest("GET", url, nil)
+	h.ResultsPage, err = getDocument("https://www.hltv.org/results?stars=1")
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
 
-	req.Header.Add("User-Agent", "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) "+
-		"AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Mobile Safari/537.36")
-	res, err := client.Do(req)
+	past, err = h.getPastMatches()
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-
-	if res.StatusCode != 200 {
-		return nil, errors.New(res.Status)
-	}
-
-	defer res.Body.Close()
-
-	doc, err := goquery.NewDocumentFromReader(res.Body)
+	future, err = h.getFutureMatches()
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-
-	return doc, nil
+	return past, future, nil
 }
 
 func PopSlashSource(selection *goquery.Selection) string {
@@ -89,7 +72,7 @@ func PopSlashSource(selection *goquery.Selection) string {
 	return split[len(split)-1]
 }
 
-func (h *HLTV) GetPastMatches() ([]model.Match, error) {
+func (h *HLTV) getPastMatches() ([]model.Match, error) {
 	doc := h.ResultsPage
 
 	matches := make([]model.Match, 0, 100)
@@ -141,7 +124,7 @@ func (h *HLTV) GetPastMatches() ([]model.Match, error) {
 	return matches, nil
 }
 
-func (h *HLTV) GetFutureMatches() ([]model.Match, error) {
+func (h *HLTV) getFutureMatches() ([]model.Match, error) {
 	doc := h.UpcomingPage
 	// Get top tier matches
 	matches := getMatchesFromMatchesPage(doc, ".liveMatch")
@@ -206,4 +189,33 @@ func getMatchesFromMatchesPage(doc *goquery.Document, matchType string) []model.
 		matches = append(matches, match)
 	})
 	return matches
+}
+
+// getDocument performs a GET-Query to the given URL, and creates a goquery-Document from its response.
+func getDocument(url string) (*goquery.Document, error) {
+	client := &http.Client{}
+	req, err := http.NewRequest("GET", url, nil)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("User-Agent", "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) "+
+		"AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Mobile Safari/537.36")
+	res, err := client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+
+	if res.StatusCode != 200 {
+		return nil, errors.New(res.Status)
+	}
+
+	defer res.Body.Close()
+
+	doc, err := goquery.NewDocumentFromReader(res.Body)
+	if err != nil {
+		return nil, err
+	}
+
+	return doc, nil
 }

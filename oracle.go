@@ -91,11 +91,13 @@ func (o *Oracle) Serve() {
 // serve attempts to bring the AlgorandBuffer in a desired state. It returns
 // a minimum time that the caller should wait before executing serve again.
 func (o *Oracle) serve(ctx context.Context) time.Duration {
-
-	err := o.updateLocalMatches()
+	// Update local list of matches
+	p, f, err := o.cfg.PrimaryAPI.Fetch()
 	if err != nil {
 		return o.cfg.RefreshInterval
 	}
+	o.pastMatches = p
+	o.futureMatches = f
 
 	desired := ConstructDesiredState(o.pastMatches, o.futureMatches, client.GlobalBytes)
 	current, err := o.buffer.GetBuffer(ctx)
@@ -118,22 +120,6 @@ func (o *Oracle) serve(ctx context.Context) time.Duration {
 	}
 	o.waitForFlush(ctx, desired)
 	return o.cfg.RefreshInterval
-}
-
-// updateLocalMatches updates the Oracles lists of matches, by querying the API.
-// How often this method is called should depend on OracleConfig.RefreshInterval.
-func (o *Oracle) updateLocalMatches() error {
-	f, err := o.cfg.PrimaryAPI.GetFutureMatches()
-	if err != nil {
-		return err
-	}
-	p, err := o.cfg.PrimaryAPI.GetPastMatches()
-	if err != nil {
-		return err
-	}
-	o.futureMatches = f
-	o.pastMatches = p
-	return nil
 }
 
 // waitForFlush waits until the AlgorandBuffer has reached the desired state.
