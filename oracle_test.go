@@ -42,14 +42,14 @@ func setupOracleWithData(past, future []model.Match, t *testing.T) (*Oracle, *si
 	stub.SetMatches(past, future)
 	// Check if desired state is written by Oracle
 	desired := ConstructDesiredState(past, future, client.GlobalBytes)
-	contains := buffer.ContainsWithin(desired, time.Second*5)
+	contains := buffer.ContainsWithin(desired, time.Second*5, 0)
 	assert.True(t, contains)
 	return oracle, buffer, stub
 }
 
 func containsDesiredState(b *siam.AlgorandBuffer, past []model.Match, future []model.Match, t time.Duration) bool {
 	desired := ConstructDesiredState(past, future, client.GlobalBytes)
-	contains := b.ContainsWithin(desired, t)
+	contains := b.ContainsWithin(desired, t, 0)
 	return contains
 }
 

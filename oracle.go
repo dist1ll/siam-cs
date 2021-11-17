@@ -3,6 +3,7 @@ package csgo
 import (
 	"context"
 	"fmt"
+	"log"
 	"sync"
 	"time"
 
@@ -112,10 +113,12 @@ func (o *Oracle) serve(ctx context.Context) time.Duration {
 
 	err = o.buffer.DeleteElements(getKeys(del)...)
 	if err != nil {
+		log.Print(err)
 		return o.cfg.RefreshInterval
 	}
 	err = o.buffer.PutElements(put)
 	if err != nil {
+		log.Print(err)
 		return o.cfg.RefreshInterval
 	}
 	o.waitForFlush(ctx, desired)
@@ -132,7 +135,7 @@ func (o *Oracle) waitForFlush(ctx context.Context, desired map[string]string) {
 		select {
 		case <-ctx.Done():
 			return
-		case <-time.After(o.cfg.SiamCfg.SleepTime):
+		case <-time.After(time.Second):
 			continue
 		}
 	}

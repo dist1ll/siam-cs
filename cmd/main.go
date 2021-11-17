@@ -2,6 +2,7 @@ package main
 
 import (
 	"log"
+	"os"
 	"time"
 
 	siam "github.com/m2q/algo-siam"
@@ -11,7 +12,7 @@ import (
 func main() {
 
 	// Create AlgorandBuffer
-	b, err := siam.CreateAlgorandBufferFromEnv(nil)
+	b, err := siam.CreateAlgorandBufferFromEnv(log.New(os.Stdout, "SIAM ", log.LstdFlags|log.Lshortfile))
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -19,7 +20,7 @@ func main() {
 	// Configure Oracle
 	cfg := &csgo.OracleConfig{
 		PrimaryAPI:      &csgo.HLTV{},
-		RefreshInterval: time.Minute,
+		RefreshInterval: time.Minute * 3,
 		SiamCfg: &siam.ManageConfig{
 			SleepTime:           time.Second * 30,
 			HealthCheckInterval: time.Minute * 3,
