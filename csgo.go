@@ -36,7 +36,7 @@ func (s *StubAPI) SetMatches(past []model.Match, future []model.Match) {
 // can be set via SetMatches.
 func (s *StubAPI) Fetch() (past, future []model.Match, err error) {
 	if s.LogActive {
-		s.Logger.Println("API request matches")
+		s.Logger.Println("Stub API was fetched")
 	}
 	past, err = s.getPastMatches()
 	if err != nil {

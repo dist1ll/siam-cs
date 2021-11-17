@@ -11,7 +11,7 @@ import (
 func main() {
 
 	// Create AlgorandBuffer
-	b, err := siam.CreateAlgorandBufferFromEnv()
+	b, err := siam.CreateAlgorandBufferFromEnv(nil)
 	if err != nil {
 		log.Fatal(err)
 	}
