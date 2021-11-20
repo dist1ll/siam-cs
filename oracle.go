@@ -19,7 +19,6 @@ type Oracle struct {
 	cfg           *OracleConfig
 	buffer        *siam.AlgorandBuffer
 	cancelOracle  context.CancelFunc
-	cancelBuffer  context.CancelFunc
 	wgExit        *sync.WaitGroup
 }
 
@@ -43,11 +42,6 @@ type OracleConfig struct {
 	// If the API accesses a rate-limited resource, then set RefreshInterval high enough
 	// as to not trigger a rate-limit or blacklist event.
 	RefreshInterval time.Duration
-
-	// SiamCfg is the configuration object for the Siam managing routine. It defines
-	// how often the Algorand node is being pinged, refreshed, checked for health,
-	// and how long to timeout in case of failure.
-	SiamCfg *siam.ManageConfig
 }
 
 // NewOracle creates and initializes an Oracle struct. Requires an API to fetch and
@@ -63,8 +57,7 @@ func NewOracle(b *siam.AlgorandBuffer, cfg *OracleConfig) *Oracle {
 // Any goroutines spawned by the Oracle can be cancelled anytime via Stop.
 func (o *Oracle) Serve() {
 	// Start ManagingRoutine for AlgorandBuffer
-	wg, c := o.buffer.SpawnManagingRoutine(o.cfg.SiamCfg)
-	o.cancelBuffer = c
+	var wg sync.WaitGroup
 
 	ctx, cancel := context.WithCancel(context.Background())
 	wg.Add(1)
@@ -86,7 +79,7 @@ func (o *Oracle) Serve() {
 	}()
 
 	o.cancelOracle = cancel
-	o.wgExit = wg
+	o.wgExit = &wg
 }
 
 // serve attempts to bring the AlgorandBuffer in a desired state. It returns
@@ -111,17 +104,17 @@ func (o *Oracle) serve(ctx context.Context) time.Duration {
 		return o.cfg.RefreshInterval
 	}
 
-	err = o.buffer.DeleteElements(getKeys(del)...)
+	err = o.buffer.DeleteElements(context.Background(), getKeys(del)...)
 	if err != nil {
 		log.Print(err)
 		return o.cfg.RefreshInterval
 	}
-	err = o.buffer.PutElements(put)
+	err = o.buffer.PutElements(context.Background(), put)
 	if err != nil {
 		log.Print(err)
 		return o.cfg.RefreshInterval
 	}
-	o.waitForFlush(ctx, desired)
+
 	return o.cfg.RefreshInterval
 }
 
@@ -179,14 +172,10 @@ func getKeys(m map[string]string) []string {
 func (o *Oracle) Stop() {
 	if o.cancelOracle != nil {
 		o.cancelOracle()
-	}
-	if o.cancelBuffer != nil {
-		o.cancelBuffer()
-	}
-	if o.cancelOracle == nil && o.cancelBuffer == nil {
+		o.wgExit.Wait()
+	} else {
 		panic("need to run .Serve() before stopping oracle")
 	}
-	o.wgExit.Wait()
 }
 
 // Wait blocks until all goroutines of the Oracle have finished execution.

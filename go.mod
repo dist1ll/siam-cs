@@ -6,7 +6,7 @@ go 1.17
 
 require (
 	github.com/PuerkitoBio/goquery v1.8.0
-	github.com/m2q/algo-siam v0.0.0-20211117131659-1609b8777398
+	github.com/m2q/algo-siam v0.0.0-20211120110124-404fc3fe149c
 	github.com/stretchr/testify v1.7.0
 )
 

@@ -27,7 +27,6 @@ func setupOracleMockedAPI(refresh time.Duration) (*Oracle, *siam.AlgorandBuffer,
 	cfg := &OracleConfig{
 		PrimaryAPI:      api,
 		RefreshInterval: refresh,
-		SiamCfg:         &siam.ManageConfig{},
 	}
 	o := NewOracle(buffer, cfg)
 	return o, buffer, api

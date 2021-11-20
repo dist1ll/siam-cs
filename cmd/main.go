@@ -21,10 +21,6 @@ func main() {
 	cfg := &csgo.OracleConfig{
 		PrimaryAPI:      &csgo.HLTV{},
 		RefreshInterval: time.Minute * 3,
-		SiamCfg: &siam.ManageConfig{
-			SleepTime:           time.Second * 30,
-			HealthCheckInterval: time.Minute * 3,
-		},
 	}
 
 	// Create Oracle
