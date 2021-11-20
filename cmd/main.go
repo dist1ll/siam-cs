@@ -2,7 +2,6 @@ package main
 
 import (
 	"log"
-	"os"
 	"time"
 
 	siam "github.com/m2q/algo-siam"
@@ -12,7 +11,7 @@ import (
 func main() {
 
 	// Create AlgorandBuffer
-	b, err := siam.CreateAlgorandBufferFromEnv(log.New(os.Stdout, "SIAM ", log.LstdFlags|log.Lshortfile))
+	b, err := siam.CreateAlgorandBufferFromEnv()
 	if err != nil {
 		log.Fatal(err)
 	}

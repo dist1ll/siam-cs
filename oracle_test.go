@@ -17,7 +17,7 @@ import (
 // AlgorandBuffer (client.AlgorandMock) and StubAPI.
 func setupOracleMockedAPI(refresh time.Duration) (*Oracle, *siam.AlgorandBuffer, *StubAPI) {
 	c := client.CreateAlgorandClientMock("", "")
-	buffer, err := siam.CreateAlgorandBuffer(c, client.GeneratePrivateKey64(), nil)
+	buffer, err := siam.CreateAlgorandBuffer(c, client.GeneratePrivateKey64())
 	if err != nil {
 		panic(err)
 	}
@@ -93,8 +93,7 @@ func TestOracle_AddNewMatches(t *testing.T) {
 func TestOracle_RespectFetchTime(t *testing.T) {
 	fmt.Print("Expect 4 log prints: \n")
 	// Create Oracle with 0.5s refresh time
-	oracle, buffer, stub := setupOracleMockedAPI(time.Millisecond * 50)
-	buffer.DisableLogger()
+	oracle, _, stub := setupOracleMockedAPI(time.Millisecond * 50)
 
 	oracle.Serve()
 	defer oracle.Stop()
