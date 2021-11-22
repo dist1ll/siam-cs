@@ -8,17 +8,14 @@ import (
 
 	siam "github.com/m2q/algo-siam"
 	"github.com/m2q/algo-siam/client"
-	"github.com/m2q/siam-cs/model"
 )
 
-// Oracle aggregates and stores all HLTV data
+// Oracle fetches, compares, and pushes data to the Blockchain
 type Oracle struct {
-	pastMatches   []model.Match
-	futureMatches []model.Match
-	cfg           *OracleConfig
-	buffer        *siam.AlgorandBuffer
-	cancelOracle  context.CancelFunc
-	wgExit        *sync.WaitGroup
+	cfg          *OracleConfig
+	buffer       *siam.AlgorandBuffer
+	cancelOracle context.CancelFunc
+	wgExit       *sync.WaitGroup
 }
 
 // OracleConfig defines the oracles behavior
@@ -55,49 +52,40 @@ func NewOracle(b *siam.AlgorandBuffer, cfg *OracleConfig) *Oracle {
 //
 // Any goroutines spawned by the Oracle can be cancelled anytime via Stop.
 func (o *Oracle) Serve() {
-	// Start ManagingRoutine for AlgorandBuffer
 	var wg sync.WaitGroup
-
 	ctx, cancel := context.WithCancel(context.Background())
 	wg.Add(1)
 	go func() {
 		defer wg.Done()
-
-		// Serving Loop
+		// serving loop
 		for ctx.Err() == nil {
-			sleep := o.serve(ctx)
-			if sleep != 0 {
-				select {
-				case <-ctx.Done():
-					return
-				case <-time.After(sleep):
-					continue
-				}
+			o.serve(ctx)
+			select {
+			case <-ctx.Done():
+				return
+			case <-time.After(o.cfg.RefreshInterval):
+				continue
 			}
 		}
 	}()
-
 	o.cancelOracle = cancel
 	o.wgExit = &wg
 }
 
 // serve attempts to bring the AlgorandBuffer in a desired state. It returns
 // a minimum time that the caller should wait before executing serve again.
-func (o *Oracle) serve(ctx context.Context) time.Duration {
+func (o *Oracle) serve(ctx context.Context) {
 	// Update local list of matches
-	p, f, err := o.cfg.PrimaryAPI.Fetch()
+	past, future, err := o.cfg.PrimaryAPI.Fetch()
 	if err != nil {
-		return o.cfg.RefreshInterval
+		log.Print(err)
+		return
 	}
-	o.pastMatches = p
-	o.futureMatches = f
-
-	desired := ConstructDesiredState(o.pastMatches, o.futureMatches, client.GlobalBytes)
+	desired := ConstructDesiredState(past, future, client.GlobalBytes)
 	err = o.buffer.AchieveDesiredState(ctx, desired)
 	if err != nil {
 		log.Print(err)
 	}
-	return o.cfg.RefreshInterval
 }
 
 // Stop signals the Oracle to stop its goroutine and stop the siam.AlgorandBuffer
