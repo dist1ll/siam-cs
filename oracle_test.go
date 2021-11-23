@@ -17,7 +17,7 @@ import (
 // AlgorandBuffer (client.AlgorandMock) and StubAPI.
 func setupOracleMockedAPI(refresh time.Duration) (*Oracle, *siam.AlgorandBuffer, *StubAPI) {
 	c := client.CreateAlgorandClientMock("", "")
-	buffer, err := siam.CreateAlgorandBuffer(c, client.GeneratePrivateKey64())
+	buffer, err := siam.NewAlgorandBuffer(c, client.GeneratePrivateKey64())
 	if err != nil {
 		panic(err)
 	}
