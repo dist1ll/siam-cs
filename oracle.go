@@ -75,7 +75,7 @@ func (o *Oracle) Serve() {
 // serve attempts to bring the AlgorandBuffer in a desired state. It returns
 // a minimum time that the caller should wait before executing serve again.
 func (o *Oracle) serve(ctx context.Context) {
-	// Update local list of matches
+	// fetch CSGO matches
 	past, future, err := o.cfg.PrimaryAPI.Fetch()
 	if err != nil {
 		log.Print(err)
