@@ -6,13 +6,13 @@ go 1.17
 
 require (
 	github.com/PuerkitoBio/goquery v1.8.0
-	github.com/m2q/algo-siam v0.0.0-20220220013117-93b52cd39362
+	github.com/m2q/algo-siam v0.0.0-20220322202757-a3f6c4cc3666
 	github.com/stretchr/testify v1.7.0
 )
 
 require (
 	github.com/algorand/go-algorand v0.0.0-20211020145413-1e5603c2691d // indirect
-	github.com/algorand/go-algorand-sdk v1.12.0 // indirect
+	github.com/algorand/go-algorand-sdk v1.13.0 // indirect
 	github.com/algorand/go-codec/codec v1.1.7 // indirect
 	github.com/andybalholm/cascadia v1.3.1 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
